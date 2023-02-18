@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            #main{
+            }
+            #header{
+                height: 46px;
+                background-color: black;
+            }
+            #nav,.subnav{
+                list-style-type: none;
+            }
+            #nav >li {
+                display: inline-block;
+            }
+            #nav li {
+                position: relative;
+            }
+            #nav> li >a{
+                color: white;
+                text-transform: uppercase;
+            }
+            #nav li a{
+                text-decoration: none;
+                line-height: 46px;
+                padding: 0 24px;
+                display: block;
+            }
+            #nav li:hover .subnav{
+                display: block;
+            }
+            #nav > li:hover > a,
+            .subnav li:hover a{
+                color: #000;
+                background-color: #ccc;
+            }
+            #nav .subnav{
+                display: none;
+                min-width: 160px;
+                top:100%;
+                left: 0;
+                position: absolute;
+                background-color: white;
+                box-shadow: 0 0 10px rgba(0, 0 , 0 , 0.3);
+            }
+
+            #nav .subnav a{
+                color: black;
+                padding: 0 12px;
+                line-height: 38px;
+            }
+            #nav .aaa a {
+                border: solid black;
+                border-width: 0 3px 3px 0;
+                display: inline-block;
+                padding: 3px;
+                color: red;
+            }
+
+
+            #slider{
+                /*                min-height: 800px;
+                                background-color: #999999;*/
+            }
+            #content{
+            }
+            #nav{
+                display: inline-block;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+                <ul id="nav">
+                    <li><a href="">p1</a></li>
+                    <li><a href="">p2</a></li>
+                    <li><a href="">p3</a></li>
+                    <li><a href="">p4</a></li>
+                    <li>
+                        <a href="">
+                            p5
+
+                        </a>
+                        <ul class="subnav">
+                            <li><a href="">first</a></li>
+                            <li><a href="">second</a></li>
+                            <li><a href="">third</a></li>
+                        </ul>
+
+                    </li>
+                </ul>
+            </div>
+            <div id="slider"></div>
+            <div id="content"></div>
+            <div id="footer"></div>
+        </div>
+
+    </body>
+</html>
