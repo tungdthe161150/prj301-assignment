@@ -1,14 +1,16 @@
+<%-- 
+    Document   : login
+    Created on : Mar 1, 2023, 10:18:44 AM
+    Author     : MSI Bravo
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--        <link rel="stylesheet" type="text/css" href="newcss.css"> -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+
         <style>
             body{
                 padding-top: 100px;
@@ -20,7 +22,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 font-family: 'Roboto', sans-serif;
                 overflow: hidden;
             }
-           
+
             input{
                 padding: 10px;
                 border-radius: 50px;
@@ -98,6 +100,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 color: #fff;
                 background-color: #4e73df;
                 border-color: #4e73df;
+                width: 99%;
             }
             .btn.c2{
                 color: #fff;
@@ -118,25 +121,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     </head>
     <body>
         <div >
-            <form  action="login.html" method="post">
+            <form  action="login" method="post">
                 <div><h1 style="text-align: center">Welcome Back!</h1></div>
+                <p style="color: red">${mess}</p>
                 <div class="form-group">
-                    <input type="email" class="nhap"
-                           id="exampleInputEmail" aria-describedby="emailHelp"
-                           placeholder="Enter Email Address...">
+                    <!--                    <input type="Email" class="nhap"
+                                               id="exampleInputEmail" aria-describedby="emailHelp" name="username"
+                                               placeholder="Enter Email Address...">-->
+                    <input id="username" type="text" name="username" class="nhap" /> 
+                    <!--                    <br/>-->
                 </div>
                 <div class="form-group">
-                    <input type="password" class="nhap"
-                           id="exampleInputPassword" placeholder="Password">
+                    <!--                    <input type="password" class="nhap" name="password"
+                                               id="exampleInputPassword" placeholder="Password">-->
+                    <input type="password" name="password"  class="nhap"/>
+                    <!--                    <br/>-->
                 </div>
                 <div class="form-group">
                     <div class="tich">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                        <!--                        <input type="checkbox" class="custom-control-input" id="customCheck" name ="remember" value="remember">
+                                                <label class="custom-control-label" for="customCheck">Remember Me</label>-->
+                        <input type="checkbox" name ="remember" value="remember"/> Remember me <br/>
+                        <!--                        <br>-->
                     </div>
                 </div>
+                <input type="submit" value="Login" class="btn c1"/>
 
-                <a href="index.html" class="btn c1">Login</a>
+                <!--                <a href="index.html" class="btn c1">Login</a>-->
                 <hr>
                 <a href="index.html" class="btn c2" >
                     <i class=""></i> Login with Google
@@ -149,5 +160,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 
             </form>
         </div>
+
     </body>
 </html>
