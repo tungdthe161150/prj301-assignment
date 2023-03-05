@@ -3,7 +3,7 @@
     Created on : Mar 4, 2023, 9:39:58 AM
     Author     : MSI Bravo
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -35,6 +35,93 @@
 
         <!-- Template Main CSS File -->
         <link href="assets/css/style.css" rel="stylesheet">
+        <style>
+
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+
+            /* Modal Content */
+            .modal-content {
+                position: relative;
+                background-color: #fefefe;
+                margin: auto;
+                padding: 0;
+                border: 1px solid #888;
+                width: 80%;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.4s;
+                animation-name: animatetop;
+                animation-duration: 0.4s
+            }
+
+            /* Add Animation */
+            @-webkit-keyframes animatetop {
+                from {
+                    top:-300px;
+                    opacity:0
+                }
+                to {
+                    top:0;
+                    opacity:1
+                }
+            }
+
+            @keyframes animatetop {
+                from {
+                    top:-300px;
+                    opacity:0
+                }
+                to {
+                    top:0;
+                    opacity:1
+                }
+            }
+
+            /* The Close Button */
+            .close {
+                color: white;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .modal-header {
+                padding: 2px 16px;
+                background-color: #5cb85c;
+                color: white;
+            }
+
+            .modal-body {
+                padding: 2px 16px;
+            }
+
+            .modal-footer {
+                padding: 2px 16px;
+                background-color: #5cb85c;
+                color: white;
+            }
+        </style>
+
     </head>
     <body>
         <header id="header" class="fixed-top d-flex align-items-cente">
@@ -88,10 +175,10 @@
                         <h1>Welcome to <span>BOX-GROW</span></h1>
                         <h2>Extremely enthusiastic practice , change every day !</h2>
 
-<!--                        <div class="btns">
-                            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
-                            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
-                        </div>-->
+                        <!--                        <div class="btns">
+                                                    <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+                                                    <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+                                                </div>-->
                     </div>
                     <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
                         <a href="assets/img/ms/Snaptik.app_7202409272750214427.mp4" class="glightbox play-btn"></a>
@@ -139,7 +226,57 @@
                         <h2>Menu</h2>
                         <p>Tập Luyện</p>
                     </div>
-<a href="Add.jsp">Create student</a>   
+                    <a href="Add.jsp">Create student</a>   
+
+                    <!-- Trigger/Open The Modal -->
+                    <button id="myBtn">Open Modal</button>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <span class="close">&times;</span>
+
+                            </div>
+                            <div style="background-color: rgba(1,1,1,2)">
+                                <form action="add" method="post">
+                                    <table>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>
+                                                <input type="text" name="pracName">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>time</td>
+                                            <td><input type="text" name="pracTime"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>tran</td>
+                                            <td><input type="text" name="pracTran"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>day</td>
+                                            <td><input type="date" name="pracDay"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>accid</td>
+                                            <td><input type="text" name="accID"></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td><button type="submit">Add student</button></td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+
                     <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
                         <thead>
                             <tr>
@@ -147,38 +284,27 @@
                                 <th scope="col">Bài Tập</th>
                                 <th scope="col">Thời Gian</th>
                                 <th scope="col">Khối Lượng Tập Luyện</th>
-                                <th scope="col">Ngày Tập Luyện</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Ngày Tập Luyện</th>                               
                                 <th scope="col"></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>
-                        <a href="update?sid=${x.id}">update</a>
-                        <a href="#" onclick="showMess(${x.id})">delete</a>
-                    </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th >3</th>
-                                <td colspan="1">Larry the Bird Larry the Bird Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
+                        <c:forEach items="${listS}" var="x">
+                            <tbody>
+                                <tr>
+                                    <!--                                    <th scope="row">1</th>-->
+                                    <td>${x.pracID}</td>
+                                    <td>${x.pracName}</td>
+                                    <td>${x.pracTime}</td>
+                                    <td>${x.pracTran}</td>
+                                    <td>${x.pracDay}</td>
+                                    <td>${x.accID}</td>
+                                    <td>
+                                        <a href="update?sid=${x.pracID}">update</a>
+                                        <a href="#" onclick="showMess(${x.pracID})">delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </c:forEach>
                     </table>
 
                 </div>
@@ -196,16 +322,55 @@
                     </div>
                 </div>
             </footer><!-- End Footer -->
+
+            <!-- Vendor JS Files -->
+            <script src="assets/vendor/aos/aos.js"></script>
+            <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+            <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+            <script src="assets/vendor/php-email-form/validate.js"></script>
+            <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+            <!-- Template Main JS File -->
+            <script src="assets/js/main.js"></script>
+
+            <script>
+                                            function showMess(id) {
+                                                var op = confirm('are you ....delete');
+                                                if (op === true) {
+                                                    window.location.href = 'delete?sid' + id;
+                                                }
+                                            }
+            </script>
+
+            <script>
+// Get the modal
+                var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+                var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+
+// When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+
+// When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
     </body>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
 </html>

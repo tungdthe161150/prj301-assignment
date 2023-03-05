@@ -106,7 +106,7 @@ public class LoginSession extends HttpServlet {
 //            HttpSession session = request.getSession();
 //            session.setAttribute("user", account);
                 response.getWriter().println("login successful!");
-                request.getRequestDispatcher("home_1.jsp").forward(request, response);
+                request.getRequestDispatcher("home_2.jsp").forward(request, response);
             } else {
 //                HttpSession session = request.getSession();
                 //session.setAttribute("user", username);

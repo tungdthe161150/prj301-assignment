@@ -31,6 +31,48 @@
         <url-pattern>/GetCookie</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>LoadControl</servlet-name>
+        <servlet-class>controller.LoadControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Show</servlet-name>
+        <jsp-file>/Show.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteControl</servlet-name>
+        <servlet-class>controller.DeleteControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddControl</servlet-name>
+        <servlet-class>controller.AddControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateControl</servlet-name>
+        <servlet-class>controller.UpdateControl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoadControl</servlet-name>
+        <url-pattern>/load</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Show</servlet-name>
+        <url-pattern>/show</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>DeleteControl</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddControl</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateControl</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+    
     <welcome-file-list>        
         <welcome-file>login.jsp</welcome-file>
 
