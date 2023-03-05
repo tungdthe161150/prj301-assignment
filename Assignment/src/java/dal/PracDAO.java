@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author MSI Bravo
  */
-public class PracDAO extends DBContext{
+public class PracDAO extends DBContext {
 
     Connection conn = null;
     PreparedStatement ps = null;
@@ -29,9 +29,9 @@ public class PracDAO extends DBContext{
             ps = conn.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Prac(rs.getInt(1), 
-                        rs.getString(2), rs.getString(3), 
-                        rs.getString(4), rs.getDate(5),rs.getInt(6)));
+                list.add(new Prac(rs.getInt(1),
+                        rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getDate(5), rs.getInt(6)));
             }
         } catch (Exception e) {
         }
@@ -39,20 +39,19 @@ public class PracDAO extends DBContext{
         return list;
     }
 
-    public void deleteStudent(String id) {
-        String query = "delete from Practice\n"
-                + "where ID = ?";
+    public void deleteStudent(String pracid) {
+        String query = "delete from Practice where pracID= ?";
         try {
             conn = new DBContext().connection;
             ps = conn.prepareStatement(query);
-            ps.setString(1, id);
+            ps.setString(1, pracid);
             ps.executeUpdate();
         } catch (Exception e) {
         }
     }
 
     public void insertStudent(String pracName,
-            String pracTime, String pracTran,String pracDay,String accID) {
+            String pracTime, String pracTran, String pracDay, String accID) {
         String query = "insert into \n"
                 + "Practice\n"
                 + "values (?,?, ?,?,?)";
@@ -69,18 +68,18 @@ public class PracDAO extends DBContext{
         }
     }
 
-    public Prac getStudentByID(String id) {
+    public Prac getStudentByID(String pracid) {
         String query = "select * from Practice\n"
-                + "where id = ?";
+                + "where pracID = ?";
         try {
             conn = new DBContext().connection;
             ps = conn.prepareStatement(query);
-            ps.setString(1, id);
+            ps.setString(1, pracid);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Prac(rs.getInt(1), 
-                        rs.getString(2), rs.getString(3), 
-                        rs.getString(4), rs.getDate(5),rs.getInt(6));
+                return new Prac(rs.getInt(1),
+                        rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getDate(5), rs.getInt(6));
             }
 
         } catch (Exception e) {
@@ -88,20 +87,24 @@ public class PracDAO extends DBContext{
         return null;
     }
 
-    public void updateStudent(String id, String name,
-            String gender, String dob) {
-        String query = "update student \n"
-                + "set [name] = ?, \n"
-                + "gender = ?, \n"
-                + "dob = ?\n"
-                + "where id= ?";
+    public void updateStudent(String pracid, String pracName,
+            String pracTime, String pracTran, String pracDay, String accID) {
+        String query = " update Practice\n"
+                + "  set pracName=?,\n"
+                + "  pracTime=?,\n"
+                + "  pracTran=?,\n"
+                + "  pracDay=?,\n"
+                + "  accID=?\n"
+                + "  where pracID=?";
         try {
             conn = new DBContext().connection;
             ps = conn.prepareStatement(query);
-            ps.setString(1, name);
-            ps.setString(2, gender);
-            ps.setString(3, dob);
-            ps.setString(4, id);
+            ps.setString(1, pracName);
+            ps.setString(2, pracTime);
+            ps.setString(3, pracTran);
+            ps.setString(4, pracDay);
+            ps.setString(5, accID);
+            ps.setString(6, pracid);
             ps.executeUpdate();
         } catch (Exception e) {
         }

@@ -1,14 +1,14 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package controller;
 
+import dal.PracDAO;
+import model.Prac;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author MSI Bravo
  */
-public class GetCookie extends HttpServlet {
+public class UpdateControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,14 +30,18 @@ public class GetCookie extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Cookie[] cookies = request.getCookies();
-        if(cookies!=null)
-        {
-            for (Cookie cooky : cookies) {
-                if(cooky.getName().equals("name")){
-                    response.getWriter().println(cooky.getValue());
-                }
-            }
+        response.setContentType("text/html;charset=UTF-8");
+        try ( PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet UpdateControl</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet UpdateControl at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
@@ -53,7 +57,12 @@ public class GetCookie extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        String pracid = request.getParameter("spracid");
+        PracDAO dao = new PracDAO();
+        Prac s = dao.getStudentByID(pracid);
+        request.setAttribute("st", s);
+        request.getRequestDispatcher("Update.jsp").forward(request, response);
     }
 
     /**
@@ -67,7 +76,19 @@ public class GetCookie extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        String spracid = request.getParameter("pracid");
+        String spracName = request.getParameter("pracName");
+        String spracTime = request.getParameter("pracTime");
+        String spracTran = request.getParameter("pracTran");
+        String spracDay = request.getParameter("pracDay");
+        String saccID = request.getParameter("accID");
+        
+        PracDAO dao = new PracDAO();
+        dao.updateStudent(spracid, spracName, spracTime, spracTran, spracDay, saccID);
+      
+        response.sendRedirect("load");
+
     }
 
     /**

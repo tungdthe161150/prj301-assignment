@@ -16,12 +16,12 @@ public class Test {
 
     public static void main(String[] args) {
         PracDAO dao = new PracDAO();
-        List<Prac> list = dao.getAllStudent();
-        for (Prac o : list) {
-            System.out.println(o);
-        }
+//        List<Prac> list = dao.getAllStudent();
+//        for (Prac o : list) {
+//            System.out.println(o);
+//        }
         
-//        Prac s = dao.getStudentByID ("1"); 
-//        System.out.println(s);
+        Prac s = dao.getStudentByID ("5"); 
+        System.out.println(s);
     }
 }

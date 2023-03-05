@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  *
- * @author macbookair
+ * @author MSI Bravo
  */
 public class AccountDAO extends DBContext {
 

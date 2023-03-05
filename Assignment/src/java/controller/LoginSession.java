@@ -20,7 +20,7 @@ import model.Account;
 
 /**
  *
- * @author macbookair
+ * @author MSI Bravo
  */
 public class LoginSession extends HttpServlet {
 

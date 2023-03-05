@@ -1,8 +1,4 @@
-<%-- 
-    Document   : home_2
-    Created on : Mar 4, 2023, 9:39:58 AM
-    Author     : MSI Bravo
---%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -226,10 +222,10 @@
                         <h2>Menu</h2>
                         <p>Tập Luyện</p>
                     </div>
-                    <a href="Add.jsp">Create student</a>   
+                    <!--                    <a href="Add.jsp">Create student</a>   -->
 
                     <!-- Trigger/Open The Modal -->
-                    <button id="myBtn">Open Modal</button>
+                    <button id="myBtn">Create student</button>
 
                     <!-- The Modal -->
                     <div id="myModal" class="modal">
@@ -292,17 +288,17 @@
                             <tbody>
                                 <tr>
                                     <!--                                    <th scope="row">1</th>-->
-                                    <td>${x.pracID}</td>
-                                    <td>${x.pracName}</td>
-                                    <td>${x.pracTime}</td>
-                                    <td>${x.pracTran}</td>
-                                    <td>${x.pracDay}</td>
-                                    <td>${x.accID}</td>
-                                    <td>
-                                        <a href="update?sid=${x.pracID}">update</a>
-                                        <a href="#" onclick="showMess(${x.pracID})">delete</a>
-                                    </td>
-                                </tr>
+                            <td>${x.pracid}</td>
+                            <td>${x.pracName}</td>
+                            <td>${x.pracTime}</td>
+                            <td>${x.pracTran}</td>
+                            <td>${x.pracDay}</td>
+                            <td>${x.accID}</td>
+                            <td>
+                                <a href="update?spracid=${x.pracid}">update</a>
+                                <a href="#" onclick="showMess(${x.pracid})">delete</a>
+                            </td>
+                            </tr>
                             </tbody>
                         </c:forEach>
                     </table>
@@ -335,12 +331,12 @@
             <script src="assets/js/main.js"></script>
 
             <script>
-                                            function showMess(id) {
-                                                var op = confirm('are you ....delete');
-                                                if (op === true) {
-                                                    window.location.href = 'delete?sid' + id;
-                                                }
-                                            }
+                                    function showMess(pracid) {
+                                        var op = confirm('are you ....delete');
+                                        if (op === true) {
+                                            window.location.href = 'delete?spracid=' + pracid;
+                                        }
+                                    }
             </script>
 
             <script>
@@ -370,6 +366,8 @@
                     }
                 }
             </script>
+            
+          
     </body>
 
 

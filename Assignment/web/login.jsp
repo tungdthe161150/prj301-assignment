@@ -1,8 +1,4 @@
-<%-- 
-    Document   : login
-    Created on : Mar 1, 2023, 10:18:44 AM
-    Author     : MSI Bravo
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

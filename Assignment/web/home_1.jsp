@@ -1,8 +1,3 @@
-<%-- 
-    Document   : home_1
-    Created on : Mar 4, 2023, 9:53:45 AM
-    Author     : MSI Bravo
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
