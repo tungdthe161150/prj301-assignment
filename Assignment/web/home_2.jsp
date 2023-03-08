@@ -31,6 +31,10 @@
 
         <!-- Template Main CSS File -->
         <link href="assets/css/style.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+        
         <style>
 
             /* The Modal (background) */
@@ -123,7 +127,7 @@
         <header id="header" class="fixed-top d-flex align-items-cente">
             <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-                <h1 class="logo me-auto me-lg-0"><a href="index.html">BOX-GROW</a></h1>
+                <h1 class="logo me-auto me-lg-0"><a href="home_2.jsp">BOX-GROW</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -153,11 +157,11 @@
                                 <li><a href="#">Drop Down 4</a></li>
                             </ul>
                         </li>
-                        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                        <li><a class="nav-link scrollto" href="#contact">Tập Luyện</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
-                <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Tập Luện</a>
+                <a href="home_1.jsp" class="book-a-table-btn scrollto d-none d-lg-flex">Đăng Xuất</a>
 
             </div>
         </header><!-- End Header -->
@@ -288,17 +292,24 @@
                             <tbody>
                                 <tr>
                                     <!--                                    <th scope="row">1</th>-->
-                            <td>${x.pracid}</td>
-                            <td>${x.pracName}</td>
-                            <td>${x.pracTime}</td>
-                            <td>${x.pracTran}</td>
-                            <td>${x.pracDay}</td>
-                            <td>${x.accID}</td>
-                            <td>
-                                <a href="update?spracid=${x.pracid}">update</a>
-                                <a href="#" onclick="showMess(${x.pracid})">delete</a>
-                            </td>
-                            </tr>
+                                    <td>${x.pracid}</td>
+                                    <td>${x.pracName}</td>
+                                    <td>${x.pracTime}</td>
+                                    <td>${x.pracTran}</td>
+                                    <td>${x.pracDay}</td>
+                                    <td>${x.accID}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+                                        <div id="demo" class="collapse">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        </div>
+
+                                        <a href="update?spracid=${x.pracid}">update</a>
+                                        <a href="#" onclick="showMess(${x.pracid})">delete</a>
+                                    </td>
+                                </tr>
                             </tbody>
                         </c:forEach>
                     </table>
@@ -331,12 +342,12 @@
             <script src="assets/js/main.js"></script>
 
             <script>
-                                    function showMess(pracid) {
-                                        var op = confirm('are you ....delete');
-                                        if (op === true) {
-                                            window.location.href = 'delete?spracid=' + pracid;
-                                        }
-                                    }
+                                            function showMess(pracid) {
+                                                var op = confirm('are you ....delete');
+                                                if (op === true) {
+                                                    window.location.href = 'delete?spracid=' + pracid;
+                                                }
+                                            }
             </script>
 
             <script>
@@ -366,8 +377,10 @@
                     }
                 }
             </script>
-            
-          
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     </body>
 
 

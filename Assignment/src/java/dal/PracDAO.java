@@ -21,9 +21,9 @@ public class PracDAO extends DBContext {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
-    public List<Prac> getAllStudent() {
+    public List<Prac> getAllStudent( ) {
         List<Prac> list = new ArrayList<>();
-        String query = "select * from Practice";
+        String query = "select * from Practice where accID=?";
         try {
             conn = new DBContext().connection;
             ps = conn.prepareStatement(query);

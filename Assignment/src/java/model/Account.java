@@ -11,48 +11,65 @@ package model;
  */
 public class Account {
 
-    private String username;
-    private String password;
-    private String displayname;
+    private int accID;
+    private String userName;
+    private String passWord;
+    private String accEmail;
+    private String fullName;
 
     public Account() {
     }
 
-    public Account(String username, String password, String displayname) {
-        this.username = username;
-        this.password = password;
-        this.displayname = displayname;
+    public Account(int accID, String userName, String passWord, String accEmail, String fullName) {
+        this.accID = accID;
+        this.userName = userName;
+        this.passWord = passWord;
+        this.accEmail = accEmail;
+        this.fullName = fullName;
     }
 
-    public String getUsername() {
-        return username;
+    public int getAccID() {
+        return accID;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setAccID(int accID) {
+        this.accID = accID;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getDisplayname() {
-        return displayname;
+    public String getPassWord() {
+        return passWord;
     }
 
-    public void setDisplayname(String displayname) {
-        this.displayname = displayname;
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
+
+    public String getAccEmail() {
+        return accEmail;
+    }
+
+    public void setAccEmail(String accEmail) {
+        this.accEmail = accEmail;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     @Override
     public String toString() {
-        return "Account{" + "username=" + username + ", password=" + password + ", displayname=" + displayname + '}';
+        return "Account{" + "accID=" + accID + ", userName=" + userName + ", passWord=" + passWord + ", accEmail=" + accEmail + ", fullName=" + fullName + '}';
     }
-
-    
-
 }

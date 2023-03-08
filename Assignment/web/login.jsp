@@ -124,20 +124,26 @@
                     <!--                    <input type="Email" class="nhap"
                                                id="exampleInputEmail" aria-describedby="emailHelp" name="username"
                                                placeholder="Enter Email Address...">-->
-                    <input id="username" type="text" name="username" class="nhap" /> 
+                    <!--                    <input id="username" type="text" name="username" class="nhap" /> -->
+                    <p> <input type="text" name="name" value="${userName}" class="nhap" placeholder="UserName"></p>
+
                     <!--                    <br/>-->
                 </div>
                 <div class="form-group">
                     <!--                    <input type="password" class="nhap" name="password"
                                                id="exampleInputPassword" placeholder="Password">-->
-                    <input type="password" name="password"  class="nhap"/>
+                    <!--                    <input type="password" name="password"  class="nhap"/>-->
+                    <p> <input type="password" name="pass" value="${passWord}" class="nhap" placeholder="Password"></p>
+
                     <!--                    <br/>-->
                 </div>
                 <div class="form-group">
                     <div class="tich">
                         <!--                        <input type="checkbox" class="custom-control-input" id="customCheck" name ="remember" value="remember">
                                                 <label class="custom-control-label" for="customCheck">Remember Me</label>-->
-                        <input type="checkbox" name ="remember" value="remember"/> Remember me <br/>
+                        <!--                        <input type="checkbox" name ="remember" value="remember"/> Remember me <br/>-->
+                        <p><input type="checkbox" name="checkbox" value="true"> Remember me</p>
+
                         <!--                        <br>-->
                     </div>
                 </div>

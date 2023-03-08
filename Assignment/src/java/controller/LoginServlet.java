@@ -1,11 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package controller;
 
-import dal.AccountDAO;
+import dal.AccDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -13,16 +12,13 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.Account;
 
 /**
  *
  * @author MSI Bravo
  */
-public class LoginSession extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,10 +37,10 @@ public class LoginSession extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginSession</title>");
+            out.println("<title>Servlet LoginServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginSession at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -62,8 +58,18 @@ public class LoginSession extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+//        processRequest(request, response);
 
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+ Cookie arr[] = request.getCookies();
+        for (Cookie cookie : arr) {
+            if (cookie.getName().equals("userCooki")) {
+                request.setAttribute("userName", cookie.getValue());
+            }
+            if (cookie.getName().equals("passCooki")) {
+                request.setAttribute("passWord", cookie.getValue());
+            }
+        }
+        request.getRequestDispatcher("Login.jsp").forward(request, response);
     }
 
     /**
@@ -74,53 +80,37 @@ public class LoginSession extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private AccountDAO loginDao;
-
-    public void init() {
-        loginDao = new AccountDAO();
-    }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        AccountDAO db = new AccountDAO();
-        Account loginBean = new Account();
-        loginBean.setUsername(username);
-        loginBean.setPassword(password);
-
-        try {
-            if (loginDao.validate(loginBean)) {
-                //HttpSession session = request.getSession();
-                // session.setAttribute("username",username);
-                String remember = request.getParameter("remember");
-                if (remember != null) {
-                    Cookie c_user = new Cookie("username", username);
-                    Cookie c_pass = new Cookie("password", password);
-                    c_user.setMaxAge(3600 * 24 * 30);
-                    c_pass.setMaxAge(3600 * 24 * 30);
-                    response.addCookie(c_pass);
-                    response.addCookie(c_user);
-                }
-//            HttpSession session = request.getSession();
-//            session.setAttribute("user", account);
-                response.getWriter().println("login successful!");
-                request.getRequestDispatcher("home_2.jsp").forward(request, response);
+//        processRequest(request, response);
+  
+    try {
+            String user = request.getParameter("name");
+            String pass = request.getParameter("pass");
+            String checkbox = request.getParameter("checkbox");
+            AccDAO loginDAO = new AccDAO();
+            Account a = loginDAO.checklogin(user, pass);
+//            DataAccount acc = loginDAO.getData(user, pass);
+            if (a == null) {
+                response.sendRedirect("Login.jsp");
             } else {
-//                HttpSession session = request.getSession();
-                //session.setAttribute("user", username);
-                //response.sendRedirect("login.jsp");
-                request.setAttribute("mess", "Wrong user or pass");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
-//     
+                Cookie u = new Cookie("userCooki", user);
+                Cookie p = new Cookie("passCooki", pass);
+                u.setMaxAge(60);
+                response.addCookie(u);//save u on chorme
+                if (checkbox != null) {
+                    p.setMaxAge(60);
+                    response.addCookie(p);
+                } else {
+                    p.setMaxAge(0);
+                }
+//                request.setAttribute("data", acc.getDisplayName());
+                request.getRequestDispatcher("home_2.jsp").forward(request, response);
             }
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LoginSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception e) {
+            System.out.println(e);
         }
-
     }
 
     /**
