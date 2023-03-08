@@ -12,6 +12,8 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.util.ArrayList;
 import model.Account;
 
 /**
@@ -37,7 +39,7 @@ public class LoginServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");            
+            out.println("<title>Servlet LoginServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
@@ -60,7 +62,7 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
 //        processRequest(request, response);
 
- Cookie arr[] = request.getCookies();
+        Cookie arr[] = request.getCookies();
         for (Cookie cookie : arr) {
             if (cookie.getName().equals("userCooki")) {
                 request.setAttribute("userName", cookie.getValue());
@@ -84,19 +86,54 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-  
-    try {
-            String user = request.getParameter("name");
+
+//        HttpSession session = request.getSession();
+//        String email = request.getParameter("email");
+//        String pass = request.getParameter("password");
+//                    String checkbox = request.getParameter("checkbox");
+//
+//        AccDAO dao = new AccDAO();
+//        String mess = "Wrong password or email ";
+//        ArrayList<Account> list = dao.getAllUser();
+//    
+//        for (Account user : list) {
+//            if (email.equals(user.getAccEmail()) && pass.equals(user.getPassWord())) {
+//                session.setAttribute("user", user);
+//                mess = "Success";
+//                Cookie u = new Cookie("userCooki", email);
+//                Cookie p = new Cookie("passCooki", pass);
+//                u.setMaxAge(60);
+//                response.addCookie(u);//save u on chorme
+//                if (checkbox != null) {
+//                    p.setMaxAge(60);
+//                    response.addCookie(p);
+//                } else {
+//                    p.setMaxAge(0);
+//                }
+//            }
+//        }
+//        if (mess.equals("Success")) {
+//            response.sendRedirect("home_2.jsp");
+//        } else {
+//            request.setAttribute("mess", mess);
+//            request.getRequestDispatcher("login.jsp").forward(request, response);
+//        }
+        try {
+            HttpSession session = request.getSession();
+
+            String email = request.getParameter("email");
             String pass = request.getParameter("pass");
             String checkbox = request.getParameter("checkbox");
             AccDAO loginDAO = new AccDAO();
-            Account a = loginDAO.checklogin(user, pass);
+            Account account = loginDAO.checklogin(email, pass);
 //            DataAccount acc = loginDAO.getData(user, pass);
-            if (a == null) {
-                response.sendRedirect("Login.jsp");
+            if (account == null) {
+                response.sendRedirect("login.jsp");
             } else {
-                Cookie u = new Cookie("userCooki", user);
+                Cookie u = new Cookie("userCooki", email);
                 Cookie p = new Cookie("passCooki", pass);
+                session.setAttribute("account", account);
+
                 u.setMaxAge(60);
                 response.addCookie(u);//save u on chorme
                 if (checkbox != null) {
@@ -106,7 +143,7 @@ public class LoginServlet extends HttpServlet {
                     p.setMaxAge(0);
                 }
 //                request.setAttribute("data", acc.getDisplayName());
-                request.getRequestDispatcher("home_2.jsp").forward(request, response);
+                request.getRequestDispatcher("load").forward(request, response);
             }
         } catch (Exception e) {
             System.out.println(e);

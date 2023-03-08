@@ -16,10 +16,14 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>controller.LoginServlet</servlet-class>
     </servlet>
-<!--    <servlet-mapping>
+    <!--    <servlet-mapping>
         <servlet-name>LoginSession</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>-->
+    <servlet>
+        <servlet-name>RegisterControl</servlet-name>
+        <servlet-class>controller.RegisterControl</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCookie</servlet-name>
         <url-pattern>/AddCookie</url-pattern>
@@ -74,6 +78,10 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterControl</servlet-name>
+        <url-pattern>/register</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

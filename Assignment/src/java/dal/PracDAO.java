@@ -21,12 +21,31 @@ public class PracDAO extends DBContext {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
-    public List<Prac> getAllStudent( ) {
+    public List<Prac> getAll(int accID) {
         List<Prac> list = new ArrayList<>();
         String query = "select * from Practice where accID=?";
         try {
             conn = new DBContext().connection;
             ps = conn.prepareStatement(query);
+            ps.setInt(1, accID);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Prac(rs.getInt(1),
+                        rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getDate(5), rs.getInt(6)));
+            }
+        } catch (Exception e) {
+        }
+
+        return list;
+    }
+    public List<Prac> getAllK() {
+        List<Prac> list = new ArrayList<>();
+        String query = "select * from Practice ";
+        try {
+            conn = new DBContext().connection;
+            ps = conn.prepareStatement(query);
+            
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Prac(rs.getInt(1),

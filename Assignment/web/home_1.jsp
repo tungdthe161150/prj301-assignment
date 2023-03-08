@@ -70,7 +70,7 @@
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
                 <a href="login.jsp" class="book-a-table-btn scrollto d-none d-lg-flex">Đăng Nhập</a>
-                <a href="register.html" class="book-a-table-btn scrollto d-none d-lg-flex">Đăng Kí</a>
+                <a href="register.jsp" class="book-a-table-btn scrollto d-none d-lg-flex">Đăng Kí</a>
 
             </div>
         </header><!-- End Header -->

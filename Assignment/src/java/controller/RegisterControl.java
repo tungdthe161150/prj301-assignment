@@ -4,21 +4,19 @@
  */
 package controller;
 
-import dal.PracDAO;
+import dal.AccDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import model.Account;
 
 /**
  *
  * @author MSI Bravo
  */
-public class AddControl extends HttpServlet {
+public class RegisterControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +35,10 @@ public class AddControl extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AddControl</title>");
+            out.println("<title>Servlet RegisterControl</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AddControl at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet RegisterControl at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,7 +56,8 @@ public class AddControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        request.getRequestDispatcher("register.jsp").forward(request, response);
     }
 
     /**
@@ -70,20 +69,18 @@ public class AddControl extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        String sname = request.getParameter("pracName");
-        String sgender = request.getParameter("pracTime");
-        String sdob = request.getParameter("pracTran");
-        String spracDay = request.getParameter("pracDay");
-        HttpSession session = request.getSession();
-        Account a = (Account) session.getAttribute("account");
-
-        String saccID = Integer.toString(a.getAccID());
-        PracDAO dao = new PracDAO();
-        dao.insertStudent(sname, sgender, sdob, spracDay, saccID);
-        response.sendRedirect("load");
+        String sname = req.getParameter("name");
+        String spass = req.getParameter("pass");
+        String semail = req.getParameter("email");
+        String sfullName = req.getParameter("fullname");
+        AccDAO dao = new AccDAO();
+        dao.insertStudent(sname, spass, semail, sfullName);
+        resp.sendRedirect("login.jsp");
+        
+       
     }
 
     /**

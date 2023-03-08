@@ -125,7 +125,9 @@
                                                id="exampleInputEmail" aria-describedby="emailHelp" name="username"
                                                placeholder="Enter Email Address...">-->
                     <!--                    <input id="username" type="text" name="username" class="nhap" /> -->
-                    <p> <input type="text" name="name" value="${userName}" class="nhap" placeholder="UserName"></p>
+                    <p> <input type="text" name="email" value="${accEmail}" class="nhap" placeholder="Email"></p>
+<!--                    <input type="email" placeholder="Enter email address(*)" value="${accEmail}" name="email"/>-->
+
 
                     <!--                    <br/>-->
                 </div>
@@ -134,6 +136,8 @@
                                                id="exampleInputPassword" placeholder="Password">-->
                     <!--                    <input type="password" name="password"  class="nhap"/>-->
                     <p> <input type="password" name="pass" value="${passWord}" class="nhap" placeholder="Password"></p>
+<!--                    <input type="password" placeholder="Enter password(*)" value="${passWord}" name="password">-->
+
 
                     <!--                    <br/>-->
                 </div>
@@ -141,7 +145,7 @@
                     <div class="tich">
                         <!--                        <input type="checkbox" class="custom-control-input" id="customCheck" name ="remember" value="remember">
                                                 <label class="custom-control-label" for="customCheck">Remember Me</label>-->
-                        <!--                        <input type="checkbox" name ="remember" value="remember"/> Remember me <br/>-->
+<!--                                                <input type="checkbox" name ="remember" value="remember"/> Remember me <br/>-->
                         <p><input type="checkbox" name="checkbox" value="true"> Remember me</p>
 
                         <!--                        <br>-->
@@ -158,7 +162,7 @@
                     <i class=""></i> Login with Facebook
                 </a>
                 <div class="small"><a style="text-decoration: none"  href="forgot-password.html">Forgot Password?</a></div>
-                <div class="small"><a style="text-decoration: none"  href="register.html">Create an Account!</a></div>
+                <div class="small"><a style="text-decoration: none"  href="register.jsp">Create an Account!</a></div>
 
             </form>
         </div>
