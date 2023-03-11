@@ -136,7 +136,7 @@
                         <li><a class="nav-link scrollto" href="#about">Giới Thiệu</a></li>
                         <li><a class="nav-link scrollto" href="#menu">Dinh Dưỡng</a></li>
                         <li><a class="nav-link scrollto" href="#specials">Bài Tập</a></li>
-                        <li><a class="nav-link scrollto" href="#events">Events</a></li>
+<!--                        <li><a class="nav-link scrollto" href="#events">Events</a></li>
                         <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li>
                         <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
                         <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -155,12 +155,15 @@
                                 <li><a href="#">Drop Down 3</a></li>
                                 <li><a href="#">Drop Down 4</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <li><a class="nav-link scrollto" href="#contact">Tập Luyện</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
-                <a href="home_1.jsp" class="book-a-table-btn scrollto d-none d-lg-flex">Đăng Xuất</a>
+                <div class="scrollto d-none d-lg-flex">
+                    <a href="#" class="book-a-table-btn ">${requestScope.data}</a>
+                <a href="home_1.jsp" class="book-a-table-btn ">Đăng Xuất</a>
+                </div>
 
             </div>
         </header><!-- End Header -->
@@ -241,9 +244,9 @@
                             </div>
                             <div style="background-color: rgba(1,1,1,2)">
                                 <form action="add" method="post">
-                                    <table>
+                                    <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
                                         <tr>
-                                            <td>Name</td>
+                                            <td style="width: 1%">Name</td>
                                             <td>
                                                 <input type="text" name="pracName">
                                             </td>
@@ -310,6 +313,71 @@
 
                 </div>
             </section><!-- End Menu Section -->
+            
+
+
+                        <!-- ======= Contact Section ======= -->
+                        <section id="contact" class="contact">
+                            <div class="container" data-aos="fade-up">
+
+                                <div class="section-title">
+                                    <h2>Contact</h2>
+                                    <p>Contact Us</p>
+                                </div>
+                            </div>
+
+                            <!--                            <div data-aos="fade-up">
+                                                            <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d489.8730024480702!2d105.52663364134324!3d21.012380366101834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31345b92fe1f3807%3A0x23340e2039e5d606!2zU8OibiBzdHJlZXQgd29ya291dCAtIMSQ4bqhaSBo4buNYyBGUFQ!5e1!3m2!1svi!2s!4v1678368811141!5m2!1svi!2s" frameborder="0" allowfullscreen></iframe>
+                                                        
+                                                        </div>-->
+
+                            <div class="container" data-aos="fade-up">
+
+                                <div class="row mt-5">
+
+                                    <div class="col-lg-4">
+                                        <div class="info" style="margin-top: 50px;">
+                                            <div class="address">
+                                                <i class="bi bi-geo-alt"></i>
+                                                <h4>Location:</h4>
+                                                <p>2G6G+XM3, Thạch Hoà, Thạch Thất, Hà Nội, Việt Nam</p>
+                                            </div>
+
+                                            <div class="open-hours">
+                                                <i class="bi bi-clock"></i>
+                                                <h4>Open Hours:</h4>
+                                                <p>
+                                                    Monday-Saturday:<br>
+                                                    8:00 AM - 21:00 PM
+                                                </p>
+                                            </div>
+
+                                            <div class="email">
+                                                <i class="bi bi-envelope"></i>
+                                                <h4>Email:</h4>
+                                                <p>daihocfpt@fe.edu.vn</p>
+                                            </div>
+
+                                            <div class="phone">
+                                                <i class="bi bi-phone"></i>
+                                                <h4>Call:</h4>
+                                                <p>(024)7308.13.13</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-lg-8 mt-5 ">
+
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d489.8730024480702!2d105.52663364134324!3d21.012380366101834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31345b92fe1f3807%3A0x23340e2039e5d606!2zU8OibiBzdHJlZXQgd29ya291dCAtIMSQ4bqhaSBo4buNYyBGUFQ!5e1!3m2!1svi!2s!4v1678368811141!5m2!1svi!2s" width="868" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </section><!-- End Contact Section -->
 
             <footer id="footer">
 

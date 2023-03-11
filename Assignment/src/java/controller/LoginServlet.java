@@ -71,7 +71,7 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("passWord", cookie.getValue());
             }
         }
-        request.getRequestDispatcher("Login.jsp").forward(request, response);
+        request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 
     /**
@@ -142,7 +142,7 @@ public class LoginServlet extends HttpServlet {
                 } else {
                     p.setMaxAge(0);
                 }
-//                request.setAttribute("data", acc.getDisplayName());
+                request.setAttribute("data", account.getUserName());
                 request.getRequestDispatcher("load").forward(request, response);
             }
         } catch (Exception e) {

@@ -41,7 +41,7 @@
         <header id="header" class="fixed-top d-flex align-items-cente">
             <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-                <h1 class="logo me-auto me-lg-0"><a href="index.html">BOX-GROW</a></h1>
+                <h1 class="logo me-auto me-lg-0"><a href="home_2.jsp">BOX-GROW</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -112,9 +112,9 @@
                     <p>Tập Luyện</p>
                 </div>
                 <form action="update" method="post" class="update11">
-                    <table>
+                    <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
                         <tr>
-                            <td>ID</td>
+                            <td style="width: 1%">ID</td>
                             <td>
                                 <input value="${st.pracid}" type="text" name="pracid" readonly>
                             </td>
@@ -139,7 +139,7 @@
                         </tr>
                         <tr>
                             <td>accid</td>
-                            <td><input value="${st.accID}" type="text" name="accID"></td>
+                            <td><input value="${st.accID}" type="text" name="accID" readonly></td>
                         </tr>
                         <tr>
                             <td></td>

@@ -4,8 +4,7 @@
  */
 package controller;
 
-import dal.PracDAO;
-import model.Prac;
+import dal.NuDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -13,14 +12,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.List;
-import model.Account;
-import jakarta.servlet.http.HttpSession;
+import model.Nutrition;
 
 /**
  *
  * @author MSI Bravo
  */
-public class LoadControl extends HttpServlet {
+public class LoadNutrition extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,10 +37,10 @@ public class LoadControl extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoadControl</title>");
+            out.println("<title>Servlet LoadNutrition</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoadControl at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet LoadNutrition at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -61,35 +59,12 @@ public class LoadControl extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-//b1: get data from dao
-//        HttpSession session = request.getSession();
-//        PracDAO dao = new PracDAO();
-//        Account a = (Account) session.getAttribute("name");
-//        List<Prac> list = dao.getAll(a.getAccID());
-////b2: set data to jsp
-//        request.setAttribute("a", a);
-//
-//        request.setAttribute("listS", list);
-//        request.getRequestDispatcher("home_2.jsp").forward(request, response);
 
-//        PracDAO dao = new PracDAO();
-//        List<Prac> list = dao.getAllK();
-////b2: set data to jsp
-//        request.setAttribute("listS", list);
-//        request.getRequestDispatcher("home_2.jsp").forward(request, response);
-
-        HttpSession session = request.getSession();
-        PracDAO dao = new PracDAO();
-
-        if (session.getAttribute("account") == null) {
-            response.sendRedirect("login.jsp");
-        } else {
-            Account a = (Account) session.getAttribute("account");
-            List<Prac> list = dao.getAll(a.getAccID());
-            request.setAttribute("a", a);
-            request.setAttribute("listS", list);
-            request.getRequestDispatcher("home_2.jsp").forward(request, response);
-        }
+        NuDAO dao = new NuDAO();
+        List<Nutrition> listnu = dao.getAllnu();
+//b2: set data to jsp
+        request.setAttribute("listnu", listnu);
+        request.getRequestDispatcher("home_1.jsp").forward(request, response);
     }
 
     /**
@@ -103,20 +78,7 @@ public class LoadControl extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
-
-HttpSession session = request.getSession();
-        PracDAO dao = new PracDAO();
-
-        if (session.getAttribute("account") == null) {
-            response.sendRedirect("Login");
-        } else {
-            Account a = (Account) session.getAttribute("account");
-            List<Prac> list = dao.getAll(a.getAccID());
-            request.setAttribute("a", a);
-            request.setAttribute("listS", list);
-            request.getRequestDispatcher("home_2.jsp").forward(request, response);
-        }
+        processRequest(request, response);
     }
 
     /**
