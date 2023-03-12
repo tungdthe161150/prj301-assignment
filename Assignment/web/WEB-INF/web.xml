@@ -28,6 +28,14 @@
         <servlet-name>LoadNutrition</servlet-name>
         <servlet-class>controller.LoadNutrition</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddWeek</servlet-name>
+        <servlet-class>controller.AddWeek</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadWeek</servlet-name>
+        <servlet-class>controller.LoadWeek</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCookie</servlet-name>
         <url-pattern>/AddCookie</url-pattern>
@@ -90,6 +98,14 @@
     <servlet-mapping>
         <servlet-name>LoadNutrition</servlet-name>
         <url-pattern>/loadnu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddWeek</servlet-name>
+        <url-pattern>/addweek</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadWeek</servlet-name>
+        <url-pattern>/loadweek</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

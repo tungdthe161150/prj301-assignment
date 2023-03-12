@@ -4,27 +4,21 @@
  */
 package controller;
 
-import dal.NuDAO;
-import dal.PracDAO;
 import dal.WeekDAO;
-import model.Prac;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.List;
-import model.Account;
 import jakarta.servlet.http.HttpSession;
-import model.Nutrition;
-import model.Week;
+import model.Account;
 
 /**
  *
  * @author MSI Bravo
  */
-public class LoadControl extends HttpServlet {
+public class AddWeek extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,10 +37,10 @@ public class LoadControl extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoadControl</title>");
+            out.println("<title>Servlet AddWeek</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoadControl at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet AddWeek at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -64,41 +58,7 @@ public class LoadControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
-//b1: get data from dao
-//        HttpSession session = request.getSession();
-//        PracDAO dao = new PracDAO();
-//        Account a = (Account) session.getAttribute("name");
-//        List<Prac> list = dao.getAll(a.getAccID());
-////b2: set data to jsp
-//        request.setAttribute("a", a);
-//
-//        request.setAttribute("listS", list);
-//        request.getRequestDispatcher("home_2.jsp").forward(request, response);
-
-//        PracDAO dao = new PracDAO();
-//        List<Prac> list = dao.getAllK();
-////b2: set data to jsp
-//        request.setAttribute("listS", list);
-//        request.getRequestDispatcher("home_2.jsp").forward(request, response);
-
-        HttpSession session = request.getSession();
-        PracDAO dao = new PracDAO();
-        WeekDAO dao2 = new WeekDAO();
-
-        if (session.getAttribute("account") == null) {
-            response.sendRedirect("login.jsp");
-        } else {
-            Account a = (Account) session.getAttribute("account");
-            List<Prac> list = dao.getAll(a.getAccID());
-                        List<Week> list2 = dao2.getAllweek(a.getAccID());
-
-            request.setAttribute("a", a);
-            request.setAttribute("listS", list);
-                        request.setAttribute("listwe", list2);
-
-            request.getRequestDispatcher("home_2.jsp").forward(request, response);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -112,28 +72,20 @@ public class LoadControl extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
+String sday_of_week = request.getParameter("day_of_week");
+        String smeal_time = request.getParameter("meal_time");
+        String smeal_name = request.getParameter("meal_name");
+        String scalories = request.getParameter("calories");
+        String sprotein = request.getParameter("protein");
+        String scarbohydrates = request.getParameter("carbohydrates");
+        String sfat = request.getParameter("fat");
+        HttpSession session = request.getSession();
+        Account a = (Account) session.getAttribute("account");
 
-HttpSession session = request.getSession();
-        PracDAO dao = new PracDAO();
-        NuDAO dao1 = new NuDAO();
-        WeekDAO dao2 = new WeekDAO();
-
-        if (session.getAttribute("account") == null) {
-            response.sendRedirect("Login");
-        } else {
-            Account a = (Account) session.getAttribute("account");
-            List<Prac> list = dao.getAll(a.getAccID());
-            List<Nutrition> list1 = dao1.getAllnu();
-            List<Week> list2 = dao2.getAllweek(a.getAccID());
-            
-            request.setAttribute("a", a);
-            request.setAttribute("listS", list);
-            request.setAttribute("listnu", list1);
-            request.setAttribute("listwe", list2);
-            request.getRequestDispatcher("home_2.jsp").forward(request, response);
-        }
-    }
+        String saccID = Integer.toString(a.getAccID());
+        WeekDAO dao = new WeekDAO();
+        dao.insertWeek(sday_of_week, smeal_time, smeal_name, scalories, sprotein, scarbohydrates, sfat, saccID);
+        response.sendRedirect("loadweek");    }
 
     /**
      * Returns a short description of the servlet.
