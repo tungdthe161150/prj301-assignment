@@ -125,7 +125,7 @@
         <header id="header" class="fixed-top d-flex align-items-cente">
             <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
-                <h1 class="logo me-auto me-lg-0"><a href="login">BOX-GROW</a></h1>
+                <h1 class="logo me-auto me-lg-0"><a href="#hero">BOX-GROW</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -161,7 +161,7 @@
                 </nav><!-- .navbar -->
                 <div class="scrollto d-none d-lg-flex">
                     <a href="#" class="book-a-table-btn ">${requestScope.data}</a>
-                    <a href="home_1.jsp" class="book-a-table-btn ">Đăng Xuất</a>
+                    <a href="loadnu" class="book-a-table-btn ">Đăng Xuất</a>
                 </div>
 
             </div>
@@ -322,6 +322,8 @@
                         <h2>Menu</h2>
                         <p>Dinh Dưỡng</p>
                     </div>
+                    
+                    
                     <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
                         <thead>
                             <tr>
@@ -352,12 +354,71 @@
             </section><!-- End Menu Section -->
 
             <!-- ======= Menu Section ======= -->
-            <section id="menu" class="menu section-bg">
+            <section id="menu1" class="menu section-bg">
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
                         <h2>Menu</h2>
                         <p>Dinh Dưỡng</p>
+                    </div>
+                     <button id="myBtn1">Create student</button>
+
+                    <!-- The Modal -->
+                    <div id="myModal1" class="modal1">
+
+                        <!-- Modal content -->
+                        <div class="modal-content1">
+                            <div class="modal-header1">
+                                <span class="close1">&times;</span>
+
+                            </div>
+                            <div style="background-color: rgba(1,1,1,2)">
+                                <form action="addweek" method="post">
+                                    <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
+                                        <tr>
+                                            <td style="width: 1%">Name</td>
+                                            <td>
+                                                <input type="text" name="day_of_week">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>time</td>
+                                            <td><input type="text" name="meal_time"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>tran</td>
+                                            <td><input type="text" name="meal_name"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>day</td>
+                                            <td><input type="date" name="calories"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>day</td>
+                                            <td><input type="date" name="protein"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>day</td>
+                                            <td><input type="date" name="carbohydrates"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>day</td>
+                                            <td><input type="date" name="fat"></td>
+                                        </tr>
+                                        <!--                                        <tr>
+                                                                                    <td>accid</td>
+                                                                                    <td><input type="text" name="accID" value=""></td>
+                                                                                </tr>-->
+                                        <tr>
+                                            <td></td>
+                                            <td><button type="submit">Add student</button></td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+
+                        </div>
+
                     </div>
                     <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
                         <thead>
@@ -514,6 +575,33 @@
                 }
             </script>
 
+            <script>
+// Get the modal
+                var modal1 = document.getElementById("myModal1");
+
+// Get the button that opens the modal
+                var btn1 = document.getElementById("myBtn1");
+
+// Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+                btn1.onclick = function () {
+                    modal1.style.display = "block";
+                }
+
+// When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal1.style.display = "none";
+                }
+
+// When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event1) {
+                    if (event1.target == modal1) {
+                        modal1.style.display = "none";
+                    }
+                }
+            </script>
 
     </body>
 

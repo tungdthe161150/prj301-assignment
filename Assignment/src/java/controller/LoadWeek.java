@@ -11,7 +11,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.List;
+import model.Account;
 import model.Week;
 
 /**
@@ -37,7 +39,7 @@ public class LoadWeek extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoadWeek</title>");            
+            out.println("<title>Servlet LoadWeek</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet LoadWeek at " + request.getContextPath() + "</h1>");
@@ -58,7 +60,20 @@ public class LoadWeek extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession();
+        if (session.getAttribute("account") == null) {
+            response.sendRedirect("login.jsp");
+        } else {
+            WeekDAO dao2 = new WeekDAO();
+
+            Account b = (Account) session.getAttribute("account");
+            request.setAttribute("b", b);
+
+            List<Week> listnu = dao2.getAllweek(b.getAccID());
+//b2: set data to jsp
+            request.setAttribute("listnu", listnu);
+            request.getRequestDispatcher("home_2.jsp").forward(request, response);
+        }
     }
 
     /**

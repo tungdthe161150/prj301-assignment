@@ -1,5 +1,7 @@
 
 import dal.PracDAO;
+import dal.WeekDAO;
+import model.Week;
 import model.Prac;
 import java.util.List;
 
@@ -15,13 +17,17 @@ import java.util.List;
 public class Test {
 
     public static void main(String[] args) {
-        PracDAO dao = new PracDAO();
-//        List<Prac> list = dao.getAllStudent();
+//        PracDAO dao = new PracDAO();
+//        List<Prac> list = dao.getAllK();
 //        for (Prac o : list) {
 //            System.out.println(o);
 //        }
-        
-        Prac s = dao.getStudentByID ("5"); 
-        System.out.println(s);
+        WeekDAO dao = new WeekDAO();
+        List<Week> list = dao.getAllweek(1);
+        for (Week o : list) {
+            System.out.println(o);
+        }
+//        Prac s = dao.getStudentByID ("5"); 
+//        System.out.println(s);
     }
 }

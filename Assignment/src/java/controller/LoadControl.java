@@ -91,11 +91,11 @@ public class LoadControl extends HttpServlet {
         } else {
             Account a = (Account) session.getAttribute("account");
             List<Prac> list = dao.getAll(a.getAccID());
-                        List<Week> list2 = dao2.getAllweek(a.getAccID());
+//                        List<Week> list2 = dao2.getAllweek(a.getAccID());
 
             request.setAttribute("a", a);
             request.setAttribute("listS", list);
-                        request.setAttribute("listwe", list2);
+//                        request.setAttribute("listwe", list2);
 
             request.getRequestDispatcher("home_2.jsp").forward(request, response);
         }

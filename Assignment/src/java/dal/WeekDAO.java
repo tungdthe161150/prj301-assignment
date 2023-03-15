@@ -30,8 +30,30 @@ public class WeekDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 list.add(new Week(rs.getInt(1),
-                        rs.getString(2),rs.getString(3),rs.getString(24), rs.getInt(5),
+                        rs.getString(2),rs.getString(3),rs.getString(4), rs.getInt(5),
                         rs.getFloat(6), rs.getFloat(7), rs.getFloat(8),rs.getInt(9)));
+                
+            }
+        } catch (Exception e) {
+        }
+
+        return list;
+    }
+    
+    
+    public List<Week> getAllweek1() {
+        List<Week> list = new ArrayList<>();
+        String query = "select * from weekly_menu ";
+        try {
+            conn = new DBContext().connection;
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                list.add(new Week(rs.getInt(1),
+                        rs.getString(2),rs.getString(3),
+                        rs.getString(4), rs.getInt(5),
+                        rs.getFloat(6), rs.getFloat(7), 
+                        rs.getFloat(8),rs.getInt(9)));
                 
             }
         } catch (Exception e) {
