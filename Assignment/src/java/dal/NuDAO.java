@@ -39,4 +39,25 @@ public class NuDAO extends DBContext{
 
         return list;
     }
+     
+     
+     public List<Nutrition> searchStudent(String search) {
+        List<Nutrition> list = new ArrayList<>();
+        try {
+            String sql = "select * from nutrition \n"
+                    + "where [Name] like ? or [calories] like ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, "%" + search + "%");
+            stm.setString(2, "%" + search + "%");
+            ResultSet rs =stm.executeQuery();
+            while (rs.next()) {
+                Nutrition s = new Nutrition(rs.getInt(1),
+                        rs.getString(2), rs.getInt(3),
+                        rs.getFloat(4), rs.getFloat(5), rs.getFloat(6));
+                list.add(s);
+            }
+        } catch (Exception e) {
+        }
+    return list;
+    }
 }

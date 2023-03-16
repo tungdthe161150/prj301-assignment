@@ -63,12 +63,12 @@ public class WeekDAO {
     }
     
     
-    public void deleteWeek(String weekid) {
+    public void deleteWeek(String id) {
         String query = "delete from weekly_menu where id= ?";
         try {
             conn = new DBContext().connection;
             ps = conn.prepareStatement(query);
-            ps.setString(1, weekid);
+            ps.setString(1, id);
             ps.executeUpdate();
         } catch (Exception e) {
         }
@@ -95,13 +95,13 @@ public class WeekDAO {
         }
     }
 
-    public Week getWeekByID(String weekid) {
+    public Week getWeekByID(String id) {
         String query = "select * from weekly_menu\n"
                 + "where id = ?";
         try {
             conn = new DBContext().connection;
             ps = conn.prepareStatement(query);
-            ps.setString(1, weekid);
+            ps.setString(1, id);
             rs = ps.executeQuery();
             while (rs.next()) {
                 return new Week(rs.getInt(1),
@@ -114,15 +114,19 @@ public class WeekDAO {
         return null;
     }
 
-    public void updateWeek(String weekid, String day_of_week,
-            String meal_time, String meal_name, String calories, String protein, String carbohydrates ,String fat, String accID) {
-        String query = " update Practice\n"
-                + "  set pracName=?,\n"
-                + "  pracTime=?,\n"
-                + "  pracTran=?,\n"
-                + "  pracDay=?,\n"
+    public void updateWeek(String id, String day_of_week,
+            String meal_time, String meal_name, String calories, String protein, 
+            String carbohydrates ,String fat, String accID) {
+        String query = " update weekly_menu\n"
+                + "  set day_of_week=?,\n"
+                + "  meal_time=?,\n"
+                + "  meal_name=?,\n"
+                + "  calories=?,\n"
+                + "  protein=?,\n"
+                + "  carbohydrates=?,\n"
+                + "  fat=?,\n"
                 + "  accID=?\n"
-                + "  where pracID=?";
+                + "  where id=?";
         try {
             conn = new DBContext().connection;
             ps = conn.prepareStatement(query);
@@ -134,7 +138,7 @@ public class WeekDAO {
             ps.setString(6, carbohydrates);
             ps.setString(7, fat);
             ps.setString(8, accID);
-            ps.setString(9, weekid);
+            ps.setString(9, id);
             ps.executeUpdate();
         } catch (Exception e) {
         }

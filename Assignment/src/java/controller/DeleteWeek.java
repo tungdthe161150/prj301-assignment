@@ -11,14 +11,12 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import model.Account;
 
 /**
  *
  * @author MSI Bravo
  */
-public class AddWeek extends HttpServlet {
+public class DeleteWeek extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +35,10 @@ public class AddWeek extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet AddWeek</title>");
+            out.println("<title>Servlet DeleteWeek</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet AddWeek at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet DeleteWeek at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,7 +56,12 @@ public class AddWeek extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+String id = request.getParameter("sid");
+//b2: pass sid to dao
+        WeekDAO dao = new WeekDAO();
+        dao.deleteWeek(id);
+        response.sendRedirect("home_2.jsp");
     }
 
     /**
@@ -72,20 +75,7 @@ public class AddWeek extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String sday_of_week = request.getParameter("day_of_week");
-        String smeal_time = request.getParameter("meal_time");
-        String smeal_name = request.getParameter("meal_name");
-        String scalories = request.getParameter("calories");
-        String sprotein = request.getParameter("protein");
-        String scarbohydrates = request.getParameter("carbohydrates");
-        String sfat = request.getParameter("fat");
-        HttpSession session = request.getSession();
-        Account a = (Account) session.getAttribute("account");
-
-        String saccID = Integer.toString(a.getAccID());
-        WeekDAO dao = new WeekDAO();
-        dao.insertWeek(sday_of_week, smeal_time, smeal_name, scalories, sprotein, scarbohydrates, sfat, saccID);
-        response.sendRedirect("load");
+        processRequest(request, response);
     }
 
     /**

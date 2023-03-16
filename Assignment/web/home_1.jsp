@@ -67,7 +67,7 @@
                                 <li><a href="#">Drop Down 4</a></li>
                             </ul>
                         </li>-->
-                        <li><a class="nav-link scrollto" href="#contact">Tập Luyện</a></li>
+                        <li><a class="nav-link scrollto" href="#contact">____</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->

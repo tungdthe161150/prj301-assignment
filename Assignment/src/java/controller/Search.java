@@ -4,21 +4,22 @@
  */
 package controller;
 
-import dal.WeekDAO;
+import dal.NuDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import model.Account;
+import java.util.ArrayList;
+import java.util.List;
+import model.Nutrition;
 
 /**
  *
  * @author MSI Bravo
  */
-public class AddWeek extends HttpServlet {
+public class Search extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,18 +33,23 @@ public class AddWeek extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet AddWeek</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet AddWeek at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+//        try ( PrintWriter out = response.getWriter()) {
+//            /* TODO output your page here. You may use following sample code. */
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet SearchServlet</title>");            
+//            out.println("</head>");
+//            out.println("<body>");
+//            out.println("<h1>Servlet SearchServlet at " + request.getContextPath() + "</h1>");
+//            out.println("</body>");
+//            out.println("</html>");
+//        }
+        NuDAO dao = new NuDAO();
+        String search = request.getParameter("search")==null?"":request.getParameter("search");
+        List<Nutrition> sl =dao.searchStudent(search);
+        request.setAttribute("listnu", sl);
+        request.getRequestDispatcher("home_2.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -72,20 +78,7 @@ public class AddWeek extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String sday_of_week = request.getParameter("day_of_week");
-        String smeal_time = request.getParameter("meal_time");
-        String smeal_name = request.getParameter("meal_name");
-        String scalories = request.getParameter("calories");
-        String sprotein = request.getParameter("protein");
-        String scarbohydrates = request.getParameter("carbohydrates");
-        String sfat = request.getParameter("fat");
-        HttpSession session = request.getSession();
-        Account a = (Account) session.getAttribute("account");
-
-        String saccID = Integer.toString(a.getAccID());
-        WeekDAO dao = new WeekDAO();
-        dao.insertWeek(sday_of_week, smeal_time, smeal_name, scalories, sprotein, scarbohydrates, sfat, saccID);
-        response.sendRedirect("load");
+        processRequest(request, response);
     }
 
     /**

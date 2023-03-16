@@ -23,11 +23,13 @@ public class Test {
 //            System.out.println(o);
 //        }
         WeekDAO dao = new WeekDAO();
-        List<Week> list = dao.getAllweek(1);
-        for (Week o : list) {
-            System.out.println(o);
-        }
+//        List<Week> list = dao.getAllweek(1);
+//        for (Week o : list) {
+//            System.out.println(o);
+//        }
 //        Prac s = dao.getStudentByID ("5"); 
 //        System.out.println(s);
+        Week s = dao.getWeekByID("5"); 
+        System.out.println(s);
     }
 }

@@ -7,9 +7,9 @@
     <filter-mapping>
         <filter-name>NewFilter</filter-name>
         <url-pattern>/home_2.jsp</url-pattern>
-<!--        <url-pattern>/load</url-pattern>
--->        <url-pattern>/update</url-pattern><!--
--->        <url-pattern>/add</url-pattern>
+        <!--<url-pattern>/load</url-pattern>-->
+        <!--        <url-pattern>/update</url-pattern>-->
+        <!--<url-pattern>/add</url-pattern>-->
         <url-pattern>/register</url-pattern>
     </filter-mapping>
     <servlet>
@@ -47,6 +47,18 @@
     <servlet>
         <servlet-name>LoadWeek</servlet-name>
         <servlet-class>controller.LoadWeek</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Search</servlet-name>
+        <servlet-class>controller.Search</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteWeek</servlet-name>
+        <servlet-class>controller.DeleteWeek</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateWeek</servlet-name>
+        <servlet-class>controller.UpdateWeek</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddCookie</servlet-name>
@@ -118,6 +130,18 @@
     <servlet-mapping>
         <servlet-name>LoadWeek</servlet-name>
         <url-pattern>/loadweek</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Search</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteWeek</servlet-name>
+        <url-pattern>/deleteweek</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateWeek</servlet-name>
+        <url-pattern>/updateweek</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

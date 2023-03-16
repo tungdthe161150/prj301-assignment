@@ -38,7 +38,7 @@
         </style>
     </head>
     <body>
-        <header id="header" class="fixed-top d-flex align-items-cente">
+       <header id="header" class="fixed-top d-flex align-items-cente">
             <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
                 <h1 class="logo me-auto me-lg-0"><a href="#hero">BOX-GROW</a></h1>
@@ -118,35 +118,47 @@
                     <h2>Update</h2>
                     <p>Tập Luyện</p>
                 </div>
-                <form action="update" method="post" class="update11">
+                <form action="updateweek" method="post" class="update11">
                     <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
                         <tr>
                             <td style="width: 1%">ID</td>
                             <td>
-                                <input value="${st.pracid}" type="text" name="pracid" readonly>
+                                <input value="${stt.id}" type="text" name="id" readonly>
                             </td>
                         </tr>
                         <tr>
                             <td>Name</td>
                             <td>
-                                <input value="${st.pracName}" type="text" name="pracName">
+                                <input value="${stt.day_of_week}" type="text" name="day_of_week">
                             </td>
                         </tr>
                         <tr>
                             <td>time</td>
-                            <td><input value="${st.pracTime}" type="text" name="pracTime"></td>
+                            <td><input value="${stt.meal_time}" type="text" name="meal_time"></td>
                         </tr>
                         <tr>
                             <td>tran</td>
-                            <td><input value="${st.pracTran}" type="text" name="pracTran"></td>
+                            <td><input value="${stt.meal_name}" type="text" name="meal_name"></td>
                         </tr>
                         <tr>
                             <td>day</td>
-                            <td><input value="${st.pracDay}" type="date" name="pracDay"></td>
+                            <td><input value="${stt.calories}" type="text" name="calories"></td>
+                        </tr>
+                        <tr>
+                            <td>day</td>
+                            <td><input value="${stt.protein}" type="text" name="protein"></td>
+                        </tr>
+                        <tr>
+                            <td>day</td>
+                            <td><input value="${stt.carbohydrates}" type="text" name="carbohydrates"></td>
+                        </tr>
+                        <tr>
+                            <td>day</td>
+                            <td><input value="${stt.fat}" type="text" name="fat"></td>
                         </tr>
                         <tr>
                             <td>accid</td>
-                            <td><input value="${st.accID}" type="text" name="accID" readonly></td>
+                            <td><input value="${stt.accID}" type="text" name="accID" readonly></td>
                         </tr>
                         <tr>
                             <td></td>

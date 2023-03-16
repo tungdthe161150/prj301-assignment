@@ -12,6 +12,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import model.Account;
 
 /**
  *
@@ -61,6 +63,10 @@ public class UpdateControl extends HttpServlet {
         String pracid = request.getParameter("spracid");
         PracDAO dao = new PracDAO();
         Prac s = dao.getStudentByID(pracid);
+        HttpSession session = request.getSession();
+        Account a = (Account) session.getAttribute("account");
+        request.setAttribute("data", a.getUserName());
+
         request.setAttribute("st", s);
         request.getRequestDispatcher("Update.jsp").forward(request, response);
     }
@@ -83,10 +89,12 @@ public class UpdateControl extends HttpServlet {
         String spracTran = request.getParameter("pracTran");
         String spracDay = request.getParameter("pracDay");
         String saccID = request.getParameter("accID");
-        
+        HttpSession session = request.getSession();
+        Account a = (Account) session.getAttribute("account");
+        request.setAttribute("data", a.getUserName());
         PracDAO dao = new PracDAO();
         dao.updateStudent(spracid, spracName, spracTime, spracTran, spracDay, saccID);
-      
+
         response.sendRedirect("load");
 
     }
