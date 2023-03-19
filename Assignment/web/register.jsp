@@ -136,22 +136,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                 <input type="password" class="fo"  placeholder="Repeat Password">
                             </div>
                         </div>-->
-            <div class="edit">
-                <button type="submit" class="btn c1" >Sign Up</button>
+            <div class="edit" >
+                <button type="submit" class="btn c1"  style="width: 98%">Sign Up</button>
             </div>
 <!--            <a href="login.html" class="btn c1">
                 Register Account</a>-->
             <hr>
-            <a href="index.html " class="btn c2" >
+            <a href="# " class="btn c2" >
                 <i ></i>  Register with Google</a>
 
 
-            <a href="index.html" class="btn c3" >
+            <a href="#" class="btn c3" >
                 <i ></i> Register with Facebook</a>
             <hr>
 
             <div class="small"><a style="text-decoration: none"  href="forgot-password.html">Forgot Password?</a></div>
-            <div class="small"><a style="text-decoration: none"  href="login.html">Already have an account? Login!</a></div>
+            <div class="small"><a style="text-decoration: none"  href="login.jsp">Already have an account? Login!</a></div>
         </form>
 
     </body>

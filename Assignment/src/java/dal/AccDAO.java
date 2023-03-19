@@ -58,7 +58,7 @@ public class AccDAO extends DBContext {
         
            
             String sql = "insert into Account "
-                    + "  values (?,?,?,?,?)";
+                    + "  values (?,?,?,?)";
             try {PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, name);
             stm.setString(2, pass);

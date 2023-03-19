@@ -212,7 +212,7 @@
 
                 <nav id="navbar" class="navbar order-last order-lg-0">
                     <ul>
-                        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                        <li><a class="nav-link scrollto active" href="#hero">Trang Chủ</a></li>
                         <li><a class="nav-link scrollto" href="#about">Giới Thiệu</a></li>
                         <li><a class="nav-link scrollto" href="#specials">Bài Tập</a></li>
 
@@ -240,7 +240,7 @@
                                                         <li><a href="#">Drop Down 4</a></li>
                                                     </ul>
                                                 </li>-->
-                        <li><a class="nav-link scrollto" href="#contact">____</a></li>
+                        <li><a class="nav-link scrollto" href="#contact">Khác</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
@@ -258,8 +258,8 @@
             <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
                 <div class="row">
                     <div class="col-lg-8">
-                        <h1>Welcome to <span>BOX-GROW</span></h1>
-                        <h2>Extremely enthusiastic practice , change every day !</h2>
+                        <h1>Chào mừng bạn đến <span>BOX-GROW</span></h1>
+                        <h2>Tích cực tập luyện để thay đổi từng ngày !</h2>
 
                         <!--                        <div class="btns">
                                                     <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>

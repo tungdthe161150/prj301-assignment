@@ -77,10 +77,37 @@ public class RegisterControl extends HttpServlet {
         String semail = req.getParameter("email");
         String sfullName = req.getParameter("fullname");
         AccDAO dao = new AccDAO();
-        dao.insertStudent(sname, spass, semail, sfullName);
+        dao.insertNewUser(sname, spass, semail, sfullName);
         resp.sendRedirect("login.jsp");
         
-       
+        
+//       String name = req.getParameter("name");
+//        String pass = req.getParameter("pass");
+//        String email = req.getParameter("email");
+//        String address = req.getParameter("fullname");
+//        
+//        AccDAO dao = new AccDAO();
+//        if (dao.chekcAccount(email) 
+//                || !pass.matches("((?=.*\\d)(?=.*[a-zA-Z])[a-zA-Z\\d!@#$%^&*]{8,31})") ) {
+//            String mess = "";
+//            
+//            if (dao.chekcAccount(email)) {
+//                mess += "Email da ton tai";
+//                req.setAttribute("mess", mess);
+//            }
+//            
+//           
+//            req.getRequestDispatcher("register.jsp").forward(req, resp);
+//
+//        } else {
+//            dao.insertNewUser(name, pass, email, name);
+//            req.setAttribute("name", name);
+//            req.setAttribute("pass", pass);
+//            req.setAttribute("email", email);
+//            req.setAttribute("fullname", name);
+//           
+//            resp.sendRedirect("login.jsp");
+//        }
     }
 
     /**
