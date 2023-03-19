@@ -304,11 +304,11 @@
                 </div>
             </section><!-- End About Section -->
 
-            <section id="specials" class="specials">
+             <section id="specials" class="specials">
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h2>Specials</h2>
+                        <h2></h2>
                         <p>Bài Tập</p>
                     </div>
 
@@ -349,10 +349,11 @@
                                             <h4 style="color: #ffcd39">Giới thiệu chung:</h4>
                                             <p class="fst-italic">Chạy bộ là một hình thức tập thể dục đơn giản và hiệu quả nhất để cải thiện sức khỏe và thể lực của bạn. Điều quan trọng nhất là tìm ra cách tập luyện phù hợp với mục tiêu của bạn và đồng thời tuân thủ một số nguyên tắc cơ bản sau đây:</p>
                                             <li>Khởi động và kết thúc đúng cách: Trước khi bắt đầu tập luyện, hãy khởi động cơ thể của bạn bằng cách đi bộ hoặc tập luyện nhẹ để tránh chấn thương. Sau khi hoàn thành, hãy tập luyện giãn cơ để giúp giảm đau và cải thiện phục hồi.</li>
-                                            <li>Tập trung vào chất lượng, không phải số lượng: Thay vì tập trung vào thời gian hoặc khoảng cách, hãy tập trung vào chất lượng của từng bước chạy. Tập trung vào kỹ năng chạy, tốc độ, thở và cảm giác của bạn để đạt được hiệu quả tốt nhất.</li>
-                                            <li>Tăng dần mức độ: Bắt đầu với khoảng cách và tốc độ chạy nhỏ, sau đó tăng dần dần khi cơ thể của bạn thích nghi với mức độ tập luyện. Đừng cố gắng quá sức trong lần đầu tiên.<button onclick="toggleContent()">xem thêm</button></li>
+                                            <li>Tập trung vào chất lượng, không phải số lượng: Thay vì tập trung vào thời gian hoặc khoảng cách, hãy tập trung vào chất lượng của từng bước chạy. Tập trung vào kỹ năng chạy, tốc độ, thở và cảm giác của bạn để đạt được hiệu quả tốt nhất.<button onclick="toggleContent()">xem thêm</button></li>
+
 
                                             <div id="content" style="display: none;">
+                                                <li>Tăng dần mức độ: Bắt đầu với khoảng cách và tốc độ chạy nhỏ, sau đó tăng dần dần khi cơ thể của bạn thích nghi với mức độ tập luyện. Đừng cố gắng quá sức trong lần đầu tiên.</li>
                                                 <li>Điều chỉnh chế độ ăn uống và thời gian ngủ: Để đạt hiệu quả tốt nhất khi tập luyện chạy bộ, bạn cần duy trì một chế độ ăn uống lành mạnh và đủ giấc ngủ.</li>
                                                 <h4 style="color: #ffcd39">Cách tập hiệu quả:</h4>
                                                 <li>Tập trung vào kỹ năng chạy: Hãy tập trung vào kỹ năng chạy của bạn, bao gồm cả cách đặt chân, cách hít thở, và tư thế của bạn khi chạy. Thực hành các kỹ năng này sẽ giúp bạn chạy hiệu quả hơn và giảm nguy cơ chấn thương.</li>
@@ -387,7 +388,7 @@
                                                 <p>Trong tổng thể, đạp xe là một hoạt động tuyệt vời để cải thiện sức khỏe và tăng cường tinh thần. Bạn nên tập đạp xe thường xuyên và chăm chỉ để có được lợi ích tốt nhất cho sức khỏe của mình.</p>
                                             </div>                                        </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/specials-2.png" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/dapxe.jfif" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -395,11 +396,21 @@
                                     <div class="row">
                                         <div class="col-lg-8 details order-2 order-lg-1">
                                             <h4 style="color: #ffcd39">Giới thiệu chung:</h4>
-                                            <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
-                                            <p>Iure officiis odit rerum. Harum sequi eum illum corrupti culpa veritatis quisquam. Neque necessitatibus illo rerum eum ut. Commodi ipsam minima molestiae sed laboriosam a iste odio. Earum odit nesciunt fugiat sit ullam. Soluta et harum voluptatem optio quae</p>
+                                            <p class="fst-italic">Nhảy dây là một hoạt động tập thể dục đơn giản và hiệu quả để cải thiện sức khỏe, tăng cường sức mạnh cơ thể và giảm cân. Nhảy dây là một hình thức tập thể thao rất phổ biến và đơn giản để nâng cao sức khỏe và cường độ cardio.</p>
+                                            <h4 style="color: #ffcd39">Cách tập hiệu quả:</h4>
+                                            <li>Chọn dây nhảy phù hợp: Chọn một chiếc dây nhảy đủ dài để bạn có thể nhảy thoải mái, nhưng không quá dài để tránh rối dây. Ngoài ra, bạn cũng cần chọn một chiếc dây có độ nảy tốt để giảm tác động lên các khớp của bạn.</li>
+                                            <li>Bắt đầu từ từ: Nếu bạn mới bắt đầu tập luyện nhảy dây, hãy bắt đầu từ những bài tập đơn giản như nhảy ở chỗ và tăng dần độ khó của bài tập theo thời gian.<button onclick="toggleContent2()">xem thêm</button></li>
+
+                                            <div id="content2" style="display: none;">
+
+                                                <li>Thực hiện bài tập phụ trợ: Để tăng cường sức mạnh và độ bền cho cơ thể, bạn nên thực hiện các bài tập phụ trợ như đẩy tay, nâng tạ, chống đẩy và xoay cơ thể.</li>
+                                                <li>Điều chỉnh tần suất và thời lượng tập luyện: Bạn nên tập luyện nhảy dây ít nhất 3 lần một tuần, mỗi lần tập từ 10 đến 30 phút. Nếu bạn muốn đốt cháy nhiều calo hơn, hãy tăng thời lượng và tần suất tập luyện của mình.</li>
+                                                <li>Dinh dưỡng và giấc ngủ: Để đạt hiệu quả tốt nhất khi tập luyện nhảy dây, bạn cần duy trì một chế độ ăn uống lành mạnh và đủ giấc ngủ. Bạn nên ăn đủ chất dinh dưỡng, đặc biệt là protein để tăng cường sức mạnh và phục hồi cơ bắp sau khi tập luyện.</li>
+                                            </div>
+
                                         </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/specials-3.png" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/nhayday.png" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -407,11 +418,20 @@
                                     <div class="row">
                                         <div class="col-lg-8 details order-2 order-lg-1">
                                             <h4 style="color: #ffcd39">Giới thiệu chung:</h4>
-                                            <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                                            <p>Eaque consequuntur consequuntur libero expedita in voluptas. Nostrum ipsam necessitatibus aliquam fugiat debitis quis velit. Eum ex maxime error in consequatur corporis atque. Eligendi asperiores sed qui veritatis aperiam quia a laborum inventore</p>
+                                            <p class="fst-italic">Kéo xà là một bài tập thể lực giúp tăng cường sức mạnh và sự linh hoạt của cơ lưng, vai và cánh tay. Đây là một bài tập rất phổ biến trong các phòng tập gym và có thể được thực hiện với một cây xà chắc chắn.</p>
+                                            <h4 style="color: #ffcd39">Cách tập hiệu quả:</h4>
+                                            <li>Chuẩn bị: Tìm một cây xà chắc chắn có thể chịu được trọng lượng của bạn và đeo găng tay để bảo vệ tay.</li>
+                                            <li>Bắt đầu: Đứng trước cây xà, giữ hai tay vào xà khoảng cách vai rộng, để ngực sát vào xà và chân đứng chắc chắn.</li>
+                                            <li>Kéo xà: Kéo xà về phía ngực của bạn bằng cách cong lưng và kéo xà về phía mình. Hãy nhớ giữ đùi và bụng chặt lại để duy trì thăng bằng.</li>
+                                            <li>Thả xà: Sau khi kéo xà về phía ngực, hãy từ từ thả nó trở lại vị trí ban đầu.<button onclick="toggleContent3()">xem thêm</button></li>
+                                            <div id="content3" style="display: none;">
+                                                <li>Lặp lại: Tiếp tục kéo và thả xà trong một chu kỳ nhất định, thường là 10-15 lần.</li><!-- comment -->
+                                                <p>Lưu ý rằng khi tập kéo xà, bạn nên sử dụng tay và cơ thể để kéo, không chỉ dùng lực cánh tay. Bạn nên thở đều và kiểm soát thở hơi trong suốt quá trình tập luyện để duy trì sự tập trung và hiệu quả. Ngoài ra, bạn cũng nên thực hiện các động tác khác để tăng cường sức mạnh cơ thể toàn diện.</p>
+                                            </div>
+
                                         </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/specials-4.png" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/keoxa.png" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -419,11 +439,19 @@
                                     <div class="row">
                                         <div class="col-lg-8 details order-2 order-lg-1">
                                             <h4 style="color: #ffcd39">Giới thiệu chung:</h4>
-                                            <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
-                                            <p>Exercitationem nostrum omnis. Ut reiciendis repudiandae minus. Omnis recusandae ut non quam ut quod eius qui. Ipsum quia odit vero atque qui quibusdam amet. Occaecati sed est sint aut vitae molestiae voluptate vel</p>
+                                            <p class="fst-italic">Plank là một bài tập cơ bản giúp tăng cường sức mạnh và độ bền cho các nhóm cơ của cơ thể, đặc biệt là cơ corset - bao gồm múi bụng, lưng và hông. Đây là một bài tập rất hiệu quả để giúp bạn có được vóc dáng săn chắc và khỏe mạnh.</p>
+                                            <h4 style="color: #ffcd39">Cách tập hiệu quả:</h4>
+                                            <li>Bước 1: Bắt đầu trong tư thế nằm úp xuống sàn, hai tay đặt sát vào sàn, vuông góc với vai, đầu gối chạm đất.</li>                                       
+                                            <li>Bước 2: Nâng đầu gối lên, duỗi chân, tạo thành một đường thẳng từ đầu đến chân. Các đầu gối, hông và vai phải ở trên cùng một đường thẳng.</li>                                       
+                                            <li>Bước 3: Giữ vững tư thế này trong khoảng 20-30 giây, hoặc nhiều hơn nếu bạn có thể.<button onclick="toggleContent4()">xem thêm</button></li>     
+                                            <div id="content4" style="display: none;">
+                                                <li>Bước 4: Nếu bạn muốn tăng độ khó của bài tập, bạn có thể nâng cao số lần lặp lại hoặc thời gian giữ tư thế, hoặc thực hiện plank trên tay hoặc kết hợp với các bài tập khác.</li>   
+                                                <p>Lưu ý rằng, khi thực hiện plank, bạn cần phải giữ cho cơ thể thẳng hàng và không cong lưng hay vỗ bụng xuống sàn. Bạn cũng cần hít thở đều nhẹ nhàng trong suốt quá trình tập, không nên thở hổn hển hoặc khó thở.</p>
+
+                                            </div>
                                         </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/specials-5.png" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/plank.jpg" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -431,11 +459,19 @@
                                     <div class="row">
                                         <div class="col-lg-8 details order-2 order-lg-1">
                                             <h4 style="color: #ffcd39">Giới thiệu chung:</h4>
-                                            <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                                            <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                                            <p class="fst-italic">Gập bụng là một bài tập rất phổ biến trong việc rèn luyện cơ bụng. Bài tập này giúp tăng cường sức mạnh cơ bụng, giảm mỡ thừa ở vùng bụng và cải thiện thể trạng.</p>
+                                            <h4 style="color: #ffcd39">Cách tập hiệu quả:</h4>
+                                            <li>Gập bụng đơn giản: Nằm xuống sàn, khớp chân cong, đặt tay sau đầu, người nghiêng về phía trước và giữ đầu gối với hai tay. Sau đó, kéo cơ bụng và nâng đầu và vai lên khỏi sàn. Giữ vị trí này trong một chút rồi thả người xuống. Lặp lại động tác này từ 10 đến 15 lần.</li>
+                                            <li>Gập bụng dưới: Nằm trên sàn, đặt tay dưới mông, giữ chân thẳng. Kéo cơ bụng và nâng chân lên và hướng sang phía trước. Giữ vị trí này trong một chút rồi thả chân xuống. Lặp lại động tác này từ 10 đến 15 lần.<button onclick="toggleContent5()">xem thêm</button></li>
+                                            <div id="content5" style="display: none;">
+                                                <li>Gập bụng nâng chân: Nằm trên sàn, đặt tay dưới mông, giữ chân thẳng. Kéo cơ bụng và nâng cả chân và thân trên lên khỏi sàn. Giữ vị trí này trong một chút rồi thả người xuống. Lặp lại động tác này từ 10 đến 15 lần.</li>
+                                                <li>Gập bụng xoay người: Nằm trên sàn, đặt tay sau đầu. Kéo cơ bụng và nâng người lên, sau đó xoay người sang trái hoặc phải, chạm tay vào đầu gối của chân bên kia và giữ vị trí này trong một chút rồi thả người xuống. Lặp lại động tác này từ 10 đến 15 lần.</li>
+                                                <p>Lưu ý khi tập gập bụng, cần điều chỉnh độ khó của bài tập phù hợp với sức khỏe và thể trạng của mình. Đồng thời, kết hợp với chế độ ăn uống lành mạnh và tập luyện đều đặn, bạn sẽ đạt được kết quả tốt nhất.</p>
+
+                                            </div>
                                         </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/specials-1.png" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/gapbung.jpg" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -443,11 +479,24 @@
                                     <div class="row">
                                         <div class="col-lg-8 details order-2 order-lg-1">
                                             <h4 style="color: #ffcd39">Giới thiệu chung:</h4>
-                                            <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                                            <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus nostrum rem vero</p>
+                                            <p class="fst-italic">Squat là một động tác tập luyện cơ bản nhưng rất hiệu quả cho toàn bộ cơ thể, đặc biệt là vùng chân, hông và đùi. Đây là một phương pháp giúp giữ gìn sức khỏe, tăng cường sức mạnh, đốt cháy mỡ thừa và nâng cao sự linh hoạt của cơ thể.</p>
+                                            <h4 style="color: #ffcd39">Cách tập hiệu quả:</h4>
+                                            <li>Đứng thẳng, đôi chân có khoảng cách rộng bằng vai.</li>
+                                            <li>Nhấc ngực lên và co lại các cơ bụng.</li>
+                                            <li>Hít thở vào và cúi gối xuống, dồn trọng lượng cơ thể về phía gót chân, giảm độ cong của lưng và duỗi tay về phía trước để giữ thăng bằng.</li>
+                                            <li>Cúi xuống đến khi hông chạm vào mặt đất hoặc đầu gối hơn mức 90 độ.</li>
+                                            <li>Giữ thế này trong vài giây và hít thở ra khi đứng dậy.<button onclick="toggleContent6()">xem thêm</button></li>
+                                            <div id="content6" style="display: none;">
+                                                <p>Để tập squat hiệu quả, bạn có thể áp dụng những lời khuyên sau đây:</p>
+                                                <li>Bắt đầu với trọng lượng nhẹ và tập dần lên khi cơ thể đã quen với động tác.</li>
+                                                <li>Làm nhiều set với số lượng lượt tập ít hơn, thay vì làm ít set nhưng số lượng lượt tập nhiều.</li>
+                                                <li>Để tăng thêm khối lượng, bạn có thể sử dụng tạ hoặc đĩa tạ để đặt trên vai hoặc giữ trên tay.</li>
+                                                <li>Luôn luôn duy trì tư thế đúng để tránh chấn thương và đạt hiệu quả tập luyện cao nhất.</li>
+                                            </div>
+
                                         </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/specials-1.png" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/squat.jpg" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -455,14 +504,20 @@
                                     <div class="row">
                                         <div class="col-lg-8 details order-2 order-lg-1">
                                             <h4 style="color: #ffcd39">Giới thiệu chung:</h4>
-                                            <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                                            <p>Bạn vào tư thế chống đẩy, hạ gối xuống và co chân lên, hai tay duỗi thẳng.</p><p>
-                                                Bạn chú ý không để chân chạm đất nhé, chỉ có phần đầu gối lúc này được chạm đất</p><p>
-                                                Kế đến, bạn giữ nguyên tư thế này và chống đẩy, dùng sức tay hạ người thấp xuống chậm chậm nhưng vẫn giữ thẳng lưng cho đến khi bạn cảm thấy cơ ngực căng ra thì dừng lại 1 nhịp
-                                                Kế đến, bạn nâng người lên phía trên, trở lại vị trí bắt đầu và thở ra.</p>
+                                            <p class="fst-italic">Chống đẩy là một bài tập rất cơ bản và hiệu quả trong việc tăng cường sức khỏe toàn diện của cơ thể. Bài tập này giúp phát triển cơ triceps, vai và ngực. </p>
+                                            <h4 style="color: #ffcd39">Cách tập hiệu quả:</h4>
+                                            <li>Đặt tay xuống sàn: Bắt đầu bằng cách đặt tay xuống sàn với khoảng cách rộng hơn vai và đôi chân duỗi ra phía sau.</li>
+                                            <li>Giữ thân thể thẳng: Hãy giữ thân thể thẳng, đầu gối không chạm đất và chân thông thường hoặc chân chống để giữ thăng bằng.</li>
+                                            <li>Hạ thân thể xuống: Hạ thân thể xuống bằng cách uốn cùi chỏ và khuỷu tay, đồng thời giữ thân thể thẳng.</li>
+                                            <li>Đẩy lên: Sau khi hạ thân thể xuống, đẩy lên bằng cách kéo hai tay lại gần nhau và đẩy người lên cao với sức mạnh từ cơ triceps, đồng thời giữ thân thể thẳng.<button onclick="toggleContent7()">xem thêm</button></li>
+                                            <div id="content7" style="display: none;">
+                                                <li>Lặp lại: Thực hiện các bước trên liên tiếp để hoàn thành một chu trình chống đẩy. Thực hiện 10-15 lần trong ba set để tăng cường cơ bắp và sức mạnh.</li>
+                                                <p>Ngoài ra, bạn có thể áp dụng thêm nhiều biến thể khác nhau của chống đẩy như chống đẩy tay chân hẹp hoặc chống đẩy kết hợp với dụng cụ tập luyện để đạt được hiệu quả tốt hơn. Trong quá trình tập luyện, hãy nhớ thở đều và giữ thân thể thẳng để tránh chấn thương và đạt được kết quả tốt nhất.</p>
+
+                                            </div>
                                         </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/ms/chay.png" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/bai-tap-cardio-giam-can-1 (1).jpg" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>

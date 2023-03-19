@@ -258,7 +258,7 @@
 
                                         </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/ms/" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/keoxa.png" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -278,7 +278,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/specials-5.png" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/plank.jpg" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -298,7 +298,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/specials-1.png" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/gapbung.jpg" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -323,7 +323,7 @@
 
                                         </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/specials-1.png" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/squat.jpg" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -344,7 +344,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-4 text-center order-1 order-lg-2">
-                                            <img src="assets/img/ms/chay.png" alt="" class="img-fluid">
+                                            <img src="assets/img/ms/bai-tap-cardio-giam-can-1 (1).jpg" alt="" class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
