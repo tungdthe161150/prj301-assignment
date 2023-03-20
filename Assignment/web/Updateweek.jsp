@@ -116,7 +116,7 @@
 
                 <div class="section-title">
                     <h2>Update</h2>
-                    <p>Tập Luyện</p>
+                    <p>Thực đơn</p>
                 </div>
                 <form action="updateweek" method="post" class="update11">
                     <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
@@ -127,33 +127,33 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Name</td>
+                            <td>Ngày</td>
                             <td>
                                 <input value="${stt.day_of_week}" type="text" name="day_of_week">
                             </td>
                         </tr>
                         <tr>
-                            <td>time</td>
+                            <td>Giờ Ăn	</td>
                             <td><input value="${stt.meal_time}" type="text" name="meal_time"></td>
                         </tr>
                         <tr>
-                            <td>tran</td>
+                            <td>Món Ăn</td>
                             <td><input value="${stt.meal_name}" type="text" name="meal_name"></td>
                         </tr>
                         <tr>
-                            <td>day</td>
+                            <td>Calo</td>
                             <td><input value="${stt.calories}" type="text" name="calories"></td>
                         </tr>
                         <tr>
-                            <td>day</td>
+                            <td>Protein</td>
                             <td><input value="${stt.protein}" type="text" name="protein"></td>
                         </tr>
                         <tr>
-                            <td>day</td>
+                            <td>Carbohydrate</td>
                             <td><input value="${stt.carbohydrates}" type="text" name="carbohydrates"></td>
                         </tr>
                         <tr>
-                            <td>day</td>
+                            <td>Chất Béo</td>
                             <td><input value="${stt.fat}" type="text" name="fat"></td>
                         </tr>
                         <tr>

@@ -127,21 +127,21 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Name</td>
+                            <td>Bài Tập	</td>
                             <td>
                                 <input value="${st.pracName}" type="text" name="pracName">
                             </td>
                         </tr>
                         <tr>
-                            <td>time</td>
+                            <td>Thời Gian</td>
                             <td><input value="${st.pracTime}" type="text" name="pracTime"></td>
                         </tr>
                         <tr>
-                            <td>tran</td>
+                            <td>Khối Lượng Tập Luyện</td>
                             <td><input value="${st.pracTran}" type="text" name="pracTran"></td>
                         </tr>
                         <tr>
-                            <td>day</td>
+                            <td>Ngày Tập Luyện	</td>
                             <td><input value="${st.pracDay}" type="date" name="pracDay"></td>
                         </tr>
                         <tr>
