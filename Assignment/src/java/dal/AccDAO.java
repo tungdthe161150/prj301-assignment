@@ -37,6 +37,22 @@ public class AccDAO extends DBContext {
         }
         return null;
     }
+    public Account checkemail(String accEmail) {
+        try {
+            String query = "select * from Account where accEmail = ?  ";
+            conn = new DBContext().connection;
+            ps = conn.prepareStatement(query);
+            ps.setString(1, accEmail);
+            
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Account a = new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                return a;
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
 
     public ArrayList<Account> getAllUser() {
         ArrayList<Account> list = new ArrayList<>();
@@ -89,35 +105,35 @@ public class AccDAO extends DBContext {
         }
     }
 
-    public Account getStudentByID(String id) {
-        String query = "select * from Account\n"
-                + "where id = ?";
-        try {
-            conn = new DBContext().connection;
-            ps = conn.prepareStatement(query);
-            ps.setString(1, id);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                return new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
-            }
-
-        } catch (Exception e) {
-        }
-        return null;
-    }
-
-    public String UpdatePassword(String pass, String email){
-        try{
-            String sql = "UPDATE Account SET passWord = ? WHERE accEmail = ?";
-            PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, pass);
-            stm.setString(2, email);
-            stm.executeUpdate();
-        } catch (Exception e) {
-                 System.out.println("Get all error "+ e.getMessage());
-        }
-        return null;
-    }
+//    public Account getStudentByID(String id) {
+//        String query = "select * from Account\n"
+//                + "where id = ?";
+//        try {
+//            conn = new DBContext().connection;
+//            ps = conn.prepareStatement(query);
+//            ps.setString(1, id);
+//            rs = ps.executeQuery();
+//            while (rs.next()) {
+//                return new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+//            }
+//
+//        } catch (Exception e) {
+//        }
+//        return null;
+//    }
+//
+//    public String UpdatePassword(String pass, String email){
+//        try{
+//            String sql = "UPDATE Account SET passWord = ? WHERE accEmail = ?";
+//            PreparedStatement stm = connection.prepareStatement(sql);
+//            stm.setString(1, pass);
+//            stm.setString(2, email);
+//            stm.executeUpdate();
+//        } catch (Exception e) {
+//                 System.out.println("Get all error "+ e.getMessage());
+//        }
+//        return null;
+//    }
     
       public boolean chekcAccount(String email) {
         try {
@@ -132,5 +148,21 @@ public class AccDAO extends DBContext {
             System.out.println("Register error : " + e.getMessage());
         }
         return false;
+    }
+      public Account checkAcountExist(String accEmail) {
+        
+        try {
+            String sql = "Select * from Account where accEmail = ?";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setString(1, accEmail);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Account x = new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                return x;
+            }
+        } catch (Exception e) {
+        }
+        return null;
     }
 }

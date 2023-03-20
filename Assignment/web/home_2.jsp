@@ -856,7 +856,7 @@
 
                         <script>
                                                         function showMess(pracid) {
-                                                            var op = confirm('are you ....delete');
+                                                            var op = confirm('Bạn chắc chắn muốn xóa?');
                                                             if (op === true) {
                                                                 window.location.href = 'delete?spracid=' + pracid;
                                                             }

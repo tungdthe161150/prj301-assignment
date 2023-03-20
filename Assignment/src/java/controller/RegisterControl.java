@@ -11,6 +11,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Account;
 
 /**
  *
@@ -56,7 +57,7 @@ public class RegisterControl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
+        processRequest(request, response);
         request.getRequestDispatcher("register.jsp").forward(request, response);
     }
 
@@ -69,18 +70,53 @@ public class RegisterControl extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        String sname = req.getParameter("name");
-        String spass = req.getParameter("pass");
-        String semail = req.getParameter("email");
-        String sfullName = req.getParameter("fullname");
+        String sname = request.getParameter("name");
+        String spass = request.getParameter("pass");
+        String semail = request.getParameter("email");
+        String sfullName = request.getParameter("fullname");
         AccDAO dao = new AccDAO();
         dao.insertNewUser(sname, spass, semail, sfullName);
-        resp.sendRedirect("login.jsp");
+        response.sendRedirect("login.jsp");
+
+//        String email = request.getParameter("email");
+//             String sname = request.getParameter("name");
+//        String spass = request.getParameter("pass");
+//        String semail = request.getParameter("email");
+//        String sfullName = request.getParameter("fullname");
+//            AccDAO loginDAO = new AccDAO();
+//            Account account = loginDAO.checkemail(email);
+////            DataAccount acc = loginDAO.getData(user, pass);
+//            if (account == null) {
+//                loginDAO.insertNewUser(sname, spass, semail, sfullName);
+//                response.sendRedirect("login.jsp");
+//            } else {
+//               String mess="Email đã có rồi!";
+//                request.setAttribute("mess", mess);
+//                request.getRequestDispatcher("register.jsp").forward(request, response);
+//            }
         
-        
+//        String a = request.getParameter("name");
+//        String b = request.getParameter("pass");
+//        String c = request.getParameter("email");
+//        String d = request.getParameter("fullname");
+//
+//        AccDAO cc = new AccDAO();
+//        Account x = cc.checkAcountExist(c);
+//        if (x == null) {
+//
+//            cc.insertNewUser(a, b, c, d);
+//            request.setAttribute("mess_s", "Create account successfully !!");
+//            request.getRequestDispatcher("register.jsp").forward(request, response);
+//
+//        } else {
+//            request.setAttribute("mess", "Username has exist");
+//            request.getRequestDispatcher("register.jsp").forward(request, response);
+//
+//        }
+
 //       String name = req.getParameter("name");
 //        String pass = req.getParameter("pass");
 //        String email = req.getParameter("email");

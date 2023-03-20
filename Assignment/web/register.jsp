@@ -136,6 +136,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                 <input type="password" class="fo"  placeholder="Repeat Password">
                             </div>
                         </div>-->
+<!--            <p>${mess}</p>-->
+<!--            <p>${mess_s}</p>-->
             <div class="edit" >
                 <button type="submit" class="btn c1"  style="width: 98%">Sign Up</button>
             </div>
