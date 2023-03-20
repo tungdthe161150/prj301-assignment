@@ -73,13 +73,24 @@ public class Register extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //        processRequest(request, response);
-        String sname = request.getParameter("name");
-        String spass = request.getParameter("pass");
-        String semail = request.getParameter("email");
-        String sfullName = request.getParameter("fullname");
-        AccDAO dao = new AccDAO();
-        dao.insertNewUser(sname, spass, semail, sfullName);
-        response.sendRedirect("login.jsp");
+        try {
+            String sname = request.getParameter("name");
+            String spass = request.getParameter("pass");
+            String semail = request.getParameter("email");
+            String sfullName = request.getParameter("fullname");
+            AccDAO dao = new AccDAO();
+            Account a = dao.checkemail(semail);
+            if (a != null) {
+                String ms = "Email is existed";
+                request.setAttribute("ms", ms);
+                request.getRequestDispatcher("register.jsp").forward(request, response);
+            } else {
+                dao.insertNewUser(sname, spass, semail, sfullName);
+                response.sendRedirect("login.jsp");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(e);
+        }
 
 //        String email = request.getParameter("email");
 //             String sname = request.getParameter("name");
@@ -97,7 +108,6 @@ public class Register extends HttpServlet {
 //                request.setAttribute("mess", mess);
 //                request.getRequestDispatcher("register.jsp").forward(request, response);
 //            }
-        
 //        String a = request.getParameter("name");
 //        String b = request.getParameter("pass");
 //        String c = request.getParameter("email");
@@ -116,7 +126,6 @@ public class Register extends HttpServlet {
 //            request.getRequestDispatcher("register.jsp").forward(request, response);
 //
 //        }
-
 //       String name = req.getParameter("name");
 //        String pass = req.getParameter("pass");
 //        String email = req.getParameter("email");

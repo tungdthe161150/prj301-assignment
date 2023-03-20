@@ -31,7 +31,7 @@ public class AccDAO extends DBContext {
             ps.setString(2, passWord);
             rs = ps.executeQuery();
             while (rs.next()) {
-                Account a = new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                Account a = new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getInt(6));
                 return a;
             }
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class AccDAO extends DBContext {
             
             rs = ps.executeQuery();
             while (rs.next()) {
-                Account a = new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                Account a = new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getInt(6));
                 return a;
             }
         } catch (Exception e) {
@@ -64,7 +64,7 @@ public class AccDAO extends DBContext {
             
             rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
+                list.add(new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getInt(6)));
             }
         } catch (Exception e) {
         }
@@ -79,7 +79,7 @@ public class AccDAO extends DBContext {
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
-                Account u = new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                Account u = new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getInt(6));
                 list.add(u);
             }
         } catch (Exception e) {
@@ -92,7 +92,7 @@ public class AccDAO extends DBContext {
         
            
             String sql = "insert into Account "
-                    + "  values (?,?,?,?)";
+                    + "  values (?,?,?,?,0)";
             try {PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, name);
             stm.setString(2, pass);
@@ -110,7 +110,7 @@ public class AccDAO extends DBContext {
             String passWord, String accEmail,String fullName) {
         String query = "insert into \n"
                 + "Account\n"
-                + "values (?,?, ?,?)";
+                + "values (?,?, ?,?,0)";
         try {
             conn = new DBContext().connection;
             ps = conn.prepareStatement(query);
@@ -176,7 +176,7 @@ public class AccDAO extends DBContext {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                Account x = new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+                Account x = new Account(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getInt(6));
                 return x;
             }
         } catch (Exception e) {

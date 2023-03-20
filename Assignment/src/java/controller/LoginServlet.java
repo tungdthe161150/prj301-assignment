@@ -128,6 +128,8 @@ public class LoginServlet extends HttpServlet {
             Account account = loginDAO.checklogin(email, pass);
 //            DataAccount acc = loginDAO.getData(user, pass);
             if (account == null) {
+                String mess="Tài khoản hoặc mật không đúng?";
+                        request.setAttribute("mess", mess);
                 response.sendRedirect("login.jsp");
             } else {
                 Cookie u = new Cookie("userCooki", email);

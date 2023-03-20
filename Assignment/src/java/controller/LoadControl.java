@@ -132,6 +132,7 @@ public class LoadControl extends HttpServlet {
             List<Nutrition> list1 = dao1.getAllnu();
             List<Week> list2 = dao2.getAllweek(a.getAccID());
             request.setAttribute("data", a.getUserName());
+            request.setAttribute("admin", a.getIsAdmin());
 
             request.setAttribute("a", a);
             request.setAttribute("listS", list);

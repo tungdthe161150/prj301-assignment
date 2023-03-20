@@ -3,6 +3,9 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
 -->
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -115,34 +118,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </div>
             <div class="flex-container">
                 <div >
-                    <input type="text" class="fo"  placeholder="Username(*)" name="name" >
+                    <input type="text" class="fo"  placeholder="Username(*)" name="name" required>
                 </div>
                 <div >
-                    <input type="password" class="fo" placeholder="Password(*)" name="pass" >
+                    <input type="password" class="fo" placeholder="Password(*)" name="pass" required>
                 </div>
             </div>
             <div>
-                <input type="email" class="fo ea" placeholder="Email(*)" name="email">
+                <input type="email" class="fo ea" placeholder="Email(*)" name="email" required>
             </div>
 
             <div>
-                <input type="text" class="fo ea" placeholder="FullName" name="fullname" >
+                <input type="text" class="fo ea" placeholder="FullName" name="fullname" required>
             </div>
-            <!--            <div class="flex-container">
-                            <div>
-                                <input type="password" class="fo" placeholder="FullName" name="address" required value="${param.fullname}">
-                            </div>
-                            <div>
-                                <input type="password" class="fo"  placeholder="Repeat Password">
-                            </div>
-                        </div>-->
-<!--            <p>${mess}</p>-->
-<!--            <p>${mess_s}</p>-->
+            
             <div class="edit" >
                 <button type="submit" class="btn c1"  style="width: 98%">Sign Up</button>
             </div>
-<!--            <a href="login.html" class="btn c1">
-                Register Account</a>-->
+            <!--            <a href="login.html" class="btn c1">
+                            Register Account</a>-->
             <hr>
             <a href="# " class="btn c2" >
                 <i ></i>  Register with Google</a>
@@ -154,6 +148,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 
             <div class="small"><a style="text-decoration: none"  href="forgot-password.html">Forgot Password?</a></div>
             <div class="small"><a style="text-decoration: none"  href="login.jsp">Already have an account? Login!</a></div>
+            <h5 style="color: red ;margin: 6px; font-size: large;">${requestScope.ms}</h5>
+
         </form>
 
     </body>

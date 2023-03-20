@@ -245,7 +245,12 @@
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
                 <div class="scrollto  d-lg-flex">
-                    <a href="#" class="book-a-table-btn ">${requestScope.data}</a>
+                    <c:if test="${sessionScope.account.getIsAdmin() == 1}">
+                        <a href="load_admin" class="book-a-table-btn ">${requestScope.data}(Admin)</a>
+                    </c:if>
+                    <c:if test="${sessionScope.account.getIsAdmin() == 0}">
+                        <a href="#" class="book-a-table-btn ">${requestScope.data}</a>
+                    </c:if>
                     <a href="loadnu" class="book-a-table-btn ">Đăng Xuất</a>
                 </div>
 
@@ -689,7 +694,7 @@
                                                     <tr>
                                                         <td style="width: 1%">Ngày</td>
                                                         <td>
-<!--                                                            <input type="text" name="day_of_week">-->
+                                                            <!--                                                            <input type="text" name="day_of_week">-->
                                                             <select   name="day_of_week">
                                                                 <option value="Thứ hai">Thứ hai</option>
                                                                 <option value="Thứ ba">Thứ ba</option>
@@ -705,7 +710,7 @@
                                                     <tr>
                                                         <td>Giờ Ăn</td>
                                                         <td>
-<!--                                                            <input type="text" name="meal_time">-->
+                                                            <!--                                                            <input type="text" name="meal_time">-->
                                                             <select name="meal_time">
                                                                 <option value="Bữa sáng">Bữa sáng</option>
                                                                 <option value="Bữa trưa">Bữa trưa</option>

@@ -16,17 +16,21 @@ public class Account {
     private String passWord;
     private String accEmail;
     private String fullName;
+    private int isAdmin;
 
     public Account() {
     }
 
-    public Account(int accID, String userName, String passWord, String accEmail, String fullName) {
+    public Account(int accID, String userName, String passWord, String accEmail, String fullName, int isAdmin) {
         this.accID = accID;
         this.userName = userName;
         this.passWord = passWord;
         this.accEmail = accEmail;
         this.fullName = fullName;
+        this.isAdmin = isAdmin;
     }
+
+    
 
     public int getAccID() {
         return accID;
@@ -68,8 +72,18 @@ public class Account {
         this.fullName = fullName;
     }
 
+    public int getIsAdmin() {
+        return isAdmin;
+    }
+
+    public void setIsAdmin(int isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
     @Override
     public String toString() {
-        return "Account{" + "accID=" + accID + ", userName=" + userName + ", passWord=" + passWord + ", accEmail=" + accEmail + ", fullName=" + fullName + '}';
+        return "Account{" + "accID=" + accID + ", userName=" + userName + ", passWord=" + passWord + ", accEmail=" + accEmail + ", fullName=" + fullName + ", isAdmin=" + isAdmin + '}';
     }
+
+   
 }
