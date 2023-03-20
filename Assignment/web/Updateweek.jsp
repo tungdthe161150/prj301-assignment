@@ -30,7 +30,7 @@
 
         <!-- Template Main CSS File -->
         <link href="assets/css/style.css" rel="stylesheet">
-        
+
         <style>
             .update11{
                 border: 1px solid #6a1a21;
@@ -38,7 +38,7 @@
         </style>
     </head>
     <body>
-       <header id="header" class="fixed-top d-flex align-items-cente">
+        <header id="header" class="fixed-top d-flex align-items-cente">
             <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
                 <h1 class="logo me-auto me-lg-0"><a href="#hero">BOX-GROW</a></h1>
@@ -75,7 +75,7 @@
                                                         <li><a href="#">Drop Down 4</a></li>
                                                     </ul>
                                                 </li>-->
-                        <li><a class="nav-link scrollto" href="#contact">____</a></li>
+                        <li><a class="nav-link scrollto" href="#contact">Khác</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
@@ -111,7 +111,7 @@
 
 
         <!-- ======= Menu Section ======= -->
-        <section id="book-a-table" class="menu section-bg">
+        <section id="td" class="menu section-bg">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
@@ -129,12 +129,33 @@
                         <tr>
                             <td>Ngày</td>
                             <td>
-                                <input value="${stt.day_of_week}" type="text" name="day_of_week">
+<!--                                <input value="${stt.day_of_week}" type="text" name="day_of_week">-->
+                                <select   name="day_of_week">
+                                    <option>${stt.day_of_week}</option>
+                                    <option value="Thứ hai">Thứ hai</option>
+                                    <option value="Thứ ba">Thứ ba</option>
+                                    <option value="Thứ tư">Thứ tư</option>
+                                    <option value="Thứ năm">Thứ năm</option>
+                                    <option value="Thứ sáu">Thứ sáu</option>
+                                    <option value="Thứ bảy">Thứ bảy</option>
+                                    <option value="Chủ nhật">Chủ nhật</option>
+
+                                </select>
                             </td>
                         </tr>
                         <tr>
                             <td>Giờ Ăn	</td>
-                            <td><input value="${stt.meal_time}" type="text" name="meal_time"></td>
+                            <td>
+<!--                                <input value="${stt.meal_time}" type="text" name="meal_time">-->
+                                <select name="meal_time">
+                                    <option>${stt.meal_time}</option>
+                                    <option value="Bữa sáng">Bữa sáng</option>
+                                    <option value="Bữa trưa">Bữa trưa</option>
+                                    <option value="Bữa tối">Bữa tối</option>
+
+                                </select>
+                            </td>
+
                         </tr>
                         <tr>
                             <td>Món Ăn</td>

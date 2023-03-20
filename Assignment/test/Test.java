@@ -1,8 +1,10 @@
 
 import dal.PracDAO;
 import dal.WeekDAO;
+import dal.AccDAO;
 import model.Week;
 import model.Prac;
+import model.Account;
 import java.util.List;
 
 /*
@@ -22,14 +24,20 @@ public class Test {
 //        for (Prac o : list) {
 //            System.out.println(o);
 //        }
-        WeekDAO dao = new WeekDAO();
+//        WeekDAO dao = new WeekDAO();
 //        List<Week> list = dao.getAllweek(1);
 //        for (Week o : list) {
 //            System.out.println(o);
 //        }
 //        Prac s = dao.getStudentByID ("5"); 
 //        System.out.println(s);
-        Week s = dao.getWeekByID("5"); 
-        System.out.println(s);
+//        Week s = dao.getWeekByID("5"); 
+//        System.out.println(s);
+        AccDAO dao = new AccDAO();
+        List<Account> list = dao.getAllacc();
+        for (Account o : list) {
+            System.out.println(o);
+        }
+
     }
 }

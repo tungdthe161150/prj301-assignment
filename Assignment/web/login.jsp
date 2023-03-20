@@ -121,9 +121,7 @@
                 <div><h1 style="text-align: center">Welcome Back!</h1></div>
                 <p style="color: red">${mess}</p>
                 <div class="form-group">
-                    <!--                    <input type="Email" class="nhap"
-                                               id="exampleInputEmail" aria-describedby="emailHelp" name="username"
-                                               placeholder="Enter Email Address...">-->
+                   
                     <!--                    <input id="username" type="text" name="username" class="nhap" /> -->
                     <p> <input type="text" name="email" value="${accEmail}" class="nhap" placeholder="Email"></p>
 <!--                    <input type="email" placeholder="Enter email address(*)" value="${accEmail}" name="email"/>-->
@@ -132,8 +130,7 @@
                     <!--                    <br/>-->
                 </div>
                 <div class="form-group">
-                    <!--                    <input type="password" class="nhap" name="password"
-                                               id="exampleInputPassword" placeholder="Password">-->
+                   
                     <!--                    <input type="password" name="password"  class="nhap"/>-->
                     <p> <input type="password" name="pass" value="${passWord}" class="nhap" placeholder="Password"></p>
 <!--                    <input type="password" placeholder="Enter password(*)" value="${passWord}" name="password">-->
@@ -143,8 +140,7 @@
                 </div>
                 <div class="form-group">
                     <div class="tich">
-                        <!--                        <input type="checkbox" class="custom-control-input" id="customCheck" name ="remember" value="remember">
-                                                <label class="custom-control-label" for="customCheck">Remember Me</label>-->
+                        <!--                        
 <!--                                                <input type="checkbox" name ="remember" value="remember"/> Remember me <br/>-->
                         <p><input type="checkbox" name="checkbox" value="true"> Remember me</p>
 

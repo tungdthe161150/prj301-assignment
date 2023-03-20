@@ -17,7 +17,7 @@ import model.Account;
  *
  * @author MSI Bravo
  */
-public class RegisterControl extends HttpServlet {
+public class Register extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

@@ -244,7 +244,7 @@
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
-                <div class="scrollto d-none d-lg-flex">
+                <div class="scrollto  d-lg-flex">
                     <a href="#" class="book-a-table-btn ">${requestScope.data}</a>
                     <a href="loadnu" class="book-a-table-btn ">Đăng Xuất</a>
                 </div>
@@ -304,7 +304,7 @@
                 </div>
             </section><!-- End About Section -->
 
-             <section id="specials" class="specials">
+            <section id="specials" class="specials">
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
@@ -551,21 +551,21 @@
                                             <form action="add" method="post">
                                                 <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
                                                     <tr>
-                                                        <td style="width: 1%">Name</td>
+                                                        <td style="width: 1%">Bài Tập</td>
                                                         <td>
                                                             <input type="text" name="pracName">
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>time</td>
+                                                        <td>Thời Gian</td>
                                                         <td><input type="text" name="pracTime"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>tran</td>
+                                                        <td>Khối Lượng Tập Luyện</td>
                                                         <td><input type="text" name="pracTran"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>day</td>
+                                                        <td>Ngày Tập Luyện</td>
                                                         <td><input type="date" name="pracDay"></td>
                                                     </tr>
                                                     <!--                                        <tr>
@@ -687,33 +687,52 @@
                                             <form action="addweek" method="post">
                                                 <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
                                                     <tr>
-                                                        <td style="width: 1%">Name</td>
+                                                        <td style="width: 1%">Ngày</td>
                                                         <td>
-                                                            <input type="text" name="day_of_week">
+<!--                                                            <input type="text" name="day_of_week">-->
+                                                            <select   name="day_of_week">
+                                                                <option value="Thứ hai">Thứ hai</option>
+                                                                <option value="Thứ ba">Thứ ba</option>
+                                                                <option value="Thứ tư">Thứ tư</option>
+                                                                <option value="Thứ năm">Thứ năm</option>
+                                                                <option value="Thứ sáu">Thứ sáu</option>
+                                                                <option value="Thứ bảy">Thứ bảy</option>
+                                                                <option value="Chủ nhật">Chủ nhật</option>
+
+                                                            </select>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>time</td>
-                                                        <td><input type="text" name="meal_time"></td>
+                                                        <td>Giờ Ăn</td>
+                                                        <td>
+<!--                                                            <input type="text" name="meal_time">-->
+                                                            <select name="meal_time">
+                                                                <option value="Bữa sáng">Bữa sáng</option>
+                                                                <option value="Bữa trưa">Bữa trưa</option>
+                                                                <option value="Bữa tối">Bữa tối</option>
+
+                                                            </select>
+                                                        </td>
+
                                                     </tr>
                                                     <tr>
-                                                        <td>tran</td>
+                                                        <td>Món Ăn</td>
                                                         <td><input type="text" name="meal_name"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>day</td>
+                                                        <td>Calo</td>
                                                         <td><input type="text" name="calories"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>day</td>
+                                                        <td>Protein</td>
                                                         <td><input type="text" name="protein"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>day</td>
+                                                        <td>Carbohydrate</td>
                                                         <td><input type="text" name="carbohydrates"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>day</td>
+                                                        <td>Chất Béo</td>
                                                         <td><input type="text" name="fat"></td>
                                                     </tr>
                                                     <!--                                        <tr>
@@ -920,7 +939,7 @@
                             }
                         </script>
 
-
+                        <script src="assets/js/toggleContent.js"></script>
 
                         </body>
 

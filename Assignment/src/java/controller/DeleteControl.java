@@ -62,7 +62,7 @@ public class DeleteControl extends HttpServlet {
 //b2: pass sid to dao
         PracDAO dao = new PracDAO();
         dao.deleteStudent(pracid);
-        response.sendRedirect("login");
+        response.sendRedirect("load");
     }
 
     /**

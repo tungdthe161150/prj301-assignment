@@ -71,7 +71,7 @@
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
-                <div class=" scrollto d-none d-lg-flex"><a href="login.jsp" class="book-a-table-btn">Đăng Nhập</a>
+                <div class=" scrollto  d-lg-flex"><a href="login.jsp" class="book-a-table-btn">Đăng Nhập</a>
                     <a href="register.jsp" class="book-a-table-btn">Đăng Kí</a></div>
 
 

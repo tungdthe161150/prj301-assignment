@@ -61,7 +61,7 @@ String id = request.getParameter("sid");
 //b2: pass sid to dao
         WeekDAO dao = new WeekDAO();
         dao.deleteWeek(id);
-        response.sendRedirect("home_2.jsp");
+        response.sendRedirect("load");
     }
 
     /**
