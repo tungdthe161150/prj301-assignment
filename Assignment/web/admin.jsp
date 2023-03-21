@@ -431,7 +431,7 @@
         </script>
         <script>
                                         function showMess1(accID) {
-                                            var op = confirm('Bạn chắc chắn muốn xóa?');
+                                            var op = confirm('Bạn chắc chắn muốn xóa Account có accID = '+accID+' ?');
                                             if (op === true) {
                                                 window.location.href = 'deleteacc?saccID=' + accID;
                                             }
