@@ -21,7 +21,6 @@ import model.Nutrition;
 import model.Prac;
 import model.Week;
 
-
 /**
  *
  * @author MSI Bravo
@@ -45,7 +44,7 @@ public class LoadAdmin extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoadAdmin</title>");            
+            out.println("<title>Servlet LoadAdmin</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet LoadAdmin at " + request.getContextPath() + "</h1>");
@@ -66,7 +65,7 @@ public class LoadAdmin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
         PracDAO dao = new PracDAO();
         WeekDAO dao2 = new WeekDAO();
         AccDAO dao3 = new AccDAO();
@@ -75,17 +74,17 @@ public class LoadAdmin extends HttpServlet {
             response.sendRedirect("login.jsp");
         } else {
             Account a = (Account) session.getAttribute("account");
-            List<Prac> list = dao.getAllK();
-            List<Week> list2 = dao2.getAllweek1();
+            String search = request.getParameter("search") == null ? "" : request.getParameter("search");
+            List<Prac> list = dao.searchPrac(search);
+            String search1 = request.getParameter("search1") == null ? "" : request.getParameter("search1");
+            List<Week> list2 = dao2.searchWeek(search1);
             List<Account> list3 = dao3.getAllacc();
 
             request.setAttribute("a", a);
             request.setAttribute("data", a.getUserName());
             request.setAttribute("listacc", list3);
-
             request.setAttribute("listtl", list);
             request.setAttribute("listwe", list2);
-            
 
             request.getRequestDispatcher("admin.jsp").forward(request, response);
         }

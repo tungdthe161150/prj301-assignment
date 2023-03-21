@@ -15,7 +15,7 @@ import model.Week;
  *
  * @author MSI Bravo
  */
-public class WeekDAO {
+public class WeekDAO extends DBContext{
     Connection conn = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
@@ -142,5 +142,27 @@ public class WeekDAO {
             ps.executeUpdate();
         } catch (Exception e) {
         }
+    }
+    
+    public List<Week> searchWeek(String search1) {
+        List<Week> list = new ArrayList<>();
+        try {
+            String sql = "select * from weekly_menu where accID like ?";
+                    
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, "%" + search1 + "%");
+           
+            ResultSet rs =stm.executeQuery();
+            while (rs.next()) {
+                Week s =  new Week(rs.getInt(1),
+                        rs.getString(2),rs.getString(3),
+                        rs.getString(4), rs.getInt(5),
+                        rs.getFloat(6), rs.getFloat(7), 
+                        rs.getFloat(8),rs.getInt(9));
+                list.add(s);
+            }
+        } catch (Exception e) {
+        }
+    return list;
     }
 }

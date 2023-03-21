@@ -128,4 +128,24 @@ public class PracDAO extends DBContext {
         } catch (Exception e) {
         }
     }
+    
+    public List<Prac> searchPrac(String search) {
+        List<Prac> list = new ArrayList<>();
+        try {
+            String sql = "select * from Practice \n"
+                    + "where [accID] like ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setString(1, "%" + search + "%");
+           
+            ResultSet rs =stm.executeQuery();
+            while (rs.next()) {
+                Prac s = new Prac(rs.getInt(1),
+                        rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getDate(5), rs.getInt(6));
+                list.add(s);
+            }
+        } catch (Exception e) {
+        }
+    return list;
+    }
 }

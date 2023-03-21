@@ -241,7 +241,7 @@
                                                         <li><a href="#">Drop Down 4</a></li>
                                                     </ul>
                                                 </li>-->
-<!--                        <li><a class="nav-link scrollto" href="#contact">Khác</a></li>-->
+                        <!--                        <li><a class="nav-link scrollto" href="#contact">Khác</a></li>-->
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
@@ -252,7 +252,7 @@
 
             </div>
         </header><!-- End Header -->
-        
+
         <section id="acc" class="specials">
             <div class="container" data-aos="fade-up">
 
@@ -269,7 +269,7 @@
                             <th class="nu" scope="col">Mật khẩu</th>
                             <th class="nu" scope="col">Email</th>
                             <th class="nu" scope="col">Tên đầy đủ</th>
-                            
+
                         </tr>
                     </thead>
                     <c:forEach items="${listacc}" var="x">
@@ -294,7 +294,7 @@
                 </table>
             </div>
         </section><!-- End Menu Section -->
-        
+
 
         <section id="tl" class="menu section-bg">
             <div class="container" data-aos="fade-up">
@@ -304,7 +304,10 @@
                     <p>Tập Luyện</p>
                 </div>
                 <!--                    <a href="Add.jsp">Create student</a>   -->
-
+                <form action="load_admin" method="get">
+                    <input type="text" name="search" placeholder="ID Account " />
+                    <input type="submit"  value="search" />
+                </form>
 
 
                 <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
@@ -350,6 +353,11 @@
                     <p>Thực đơn</p>
                 </div>
 
+                <form action="load_admin" method="get">
+                    <input type="text" name="search1" placeholder="ID Account " />
+                    <input type="submit"  value="search" />
+                </form>
+                
                 <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
                     <thead>
                         <tr>
