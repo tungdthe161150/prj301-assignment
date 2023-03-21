@@ -65,6 +65,14 @@
         <servlet-name>registerr</servlet-name>
         <servlet-class>controller.registerr</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteAcc</servlet-name>
+        <servlet-class>controller.DeleteAcc</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateAcc</servlet-name>
+        <servlet-class>controller.UpdateAcc</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCookie</servlet-name>
         <url-pattern>/AddCookie</url-pattern>
@@ -151,6 +159,14 @@
     <servlet-mapping>
         <servlet-name>registerr</servlet-name>
         <url-pattern>/registerr</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteAcc</servlet-name>
+        <url-pattern>/deleteacc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateAcc</servlet-name>
+        <url-pattern>/updateacc</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

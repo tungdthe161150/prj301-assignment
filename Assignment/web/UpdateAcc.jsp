@@ -1,3 +1,8 @@
+<%-- 
+    Document   : UpdateAcc
+    Created on : Mar 21, 2023, 11:25:21 AM
+    Author     : MSI Bravo
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,7 +35,7 @@
 
         <!-- Template Main CSS File -->
         <link href="assets/css/style.css" rel="stylesheet">
-
+        
         <style>
             .update11{
                 border: 1px solid #6a1a21;
@@ -75,7 +80,7 @@
                                                         <li><a href="#">Drop Down 4</a></li>
                                                     </ul>
                                                 </li>-->
-                        <li><a class="nav-link scrollto" href="#contact">Khác</a></li>
+                        <li><a class="nav-link scrollto" href="#contact">____</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
@@ -86,100 +91,45 @@
 
             </div>
         </header><!-- End Header -->
-        <section id="hero" class="d-flex align-items-center">
-            <video playsinline autoplay muted loop>
-                <source src="assets/img/ms/Snaptik.app_7202409272750214427.mp4" type="video/mp4">
-            </video>
-            <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <h1>Welcome to <span>BOX-GROW</span></h1>
-                        <h2>Extremely enthusiastic practice , change every day !</h2>
-
-                        <div class="btns">
-                            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
-                            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-                        <a href="assets/img/ms/Snaptik.app_7202409272750214427.mp4" class="glightbox play-btn"></a>
-                    </div>
-
-                </div>
-            </div>
-        </section><!-- End Hero -->
-
-
+        
+        
         <!-- ======= Menu Section ======= -->
-        <section id="td" class="menu section-bg">
+        <section id="book-a-table" class="menu section-bg">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
                     <h2>Update</h2>
-                    <p>Thực đơn</p>
+                    <p>Tập Luyện</p>
                 </div>
-                <form action="updateweek" method="post" class="update11">
+                <form action="updateacc" method="post" class="update11">
                     <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
                         <tr>
-                            <td style="width: 1%">ID</td>
+                            <td style="width: 1%">AccID</td>
                             <td>
-                                <input value="${stt.id}" type="text" name="id" readonly>
+                                <input value="${st.accID}" type="text" name="accID" readonly>
                             </td>
                         </tr>
                         <tr>
-                            <td>Ngày</td>
+                            <td>Tên tài khoản	</td>
                             <td>
-<!--                                <input value="${stt.day_of_week}" type="text" name="day_of_week">-->
-                                <select   name="day_of_week">
-<!--                                    <option>${stt.day_of_week}</option>-->
-                                    <option value="Thứ hai">Thứ hai</option>
-                                    <option value="Thứ ba">Thứ ba</option>
-                                    <option value="Thứ tư">Thứ tư</option>
-                                    <option value="Thứ năm">Thứ năm</option>
-                                    <option value="Thứ sáu">Thứ sáu</option>
-                                    <option value="Thứ bảy">Thứ bảy</option>
-                                    <option value="Chủ nhật">Chủ nhật</option>
-
-                                </select>
+                                <input value="${st.userName}" type="text" name="name">
                             </td>
                         </tr>
                         <tr>
-                            <td>Giờ Ăn	</td>
-                            <td>
-<!--                                <input value="${stt.meal_time}" type="text" name="meal_time">-->
-                                <select name="meal_time">
-<!--                                    <option>${stt.meal_time}</option>-->
-                                    <option value="Bữa sáng">Bữa sáng</option>
-                                    <option value="Bữa trưa">Bữa trưa</option>
-                                    <option value="Bữa tối">Bữa tối</option>
-
-                                </select>
-                            </td>
-
+                            <td>Mật khẩu</td>
+                            <td><input value="${st.passWord}" type="text" name="pass"></td>
                         </tr>
                         <tr>
-                            <td>Món Ăn</td>
-                            <td><input value="${stt.meal_name}" type="text" name="meal_name"></td>
+                            <td>Email</td>
+                            <td><input value="${st.accEmail}" type="email" name="email"></td>
                         </tr>
                         <tr>
-                            <td>Calo</td>
-                            <td><input value="${stt.calories}" type="text" name="calories"></td>
+                            <td>Tên đầy đủ</td>
+                            <td><input value="${st.fullName}" type="text" name="fullname"></td>
                         </tr>
                         <tr>
-                            <td>Protein</td>
-                            <td><input value="${stt.protein}" type="text" name="protein"></td>
-                        </tr>
-                        <tr>
-                            <td>Carbohydrate</td>
-                            <td><input value="${stt.carbohydrates}" type="text" name="carbohydrates"></td>
-                        </tr>
-                        <tr>
-                            <td>Chất Béo</td>
-                            <td><input value="${stt.fat}" type="text" name="fat"></td>
-                        </tr>
-                        <tr>
-                            <td>accid</td>
-                            <td><input value="${stt.accID}" type="text" name="accID" readonly></td>
+                            <td>IsAdmin</td>
+                            <td><input value="${st.isAdmin}" type="number" min="0" max="1" name="isadmin" ></td>
                         </tr>
                         <tr>
                             <td></td>

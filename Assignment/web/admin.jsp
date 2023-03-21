@@ -284,8 +284,8 @@
                                 <td>
 
 
-                                    <a href="#">update</a>
-                                    <a href="#" >delete</a>
+                                    <a href="updateacc?saccID=${x.accID}">update</a>
+                                    <a href="#" onclick="showMess1(${x.accID}) ">delete</a>
                                 </td>
 
                             </tr>
@@ -426,6 +426,14 @@
                                             var op = confirm('Bạn chắc chắn muốn xóa?');
                                             if (op === true) {
                                                 window.location.href = 'delete?spracid=' + pracid;
+                                            }
+                                        }
+        </script>
+        <script>
+                                        function showMess1(accID) {
+                                            var op = confirm('Bạn chắc chắn muốn xóa?');
+                                            if (op === true) {
+                                                window.location.href = 'deleteacc?saccID=' + accID;
                                             }
                                         }
         </script>
