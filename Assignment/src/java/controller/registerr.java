@@ -5,19 +5,20 @@
 package controller;
 
 import dal.AccDAO;
-import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import model.Account;
+
 
 /**
  *
  * @author MSI Bravo
  */
-public class Register extends HttpServlet {
+public class registerr extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +37,10 @@ public class Register extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet RegisterControl</title>");
+            out.println("<title>Servlet registerr</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet RegisterControl at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet registerr at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,7 +59,6 @@ public class Register extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        request.getRequestDispatcher("register.jsp").forward(request, response);
     }
 
     /**
@@ -72,7 +72,6 @@ public class Register extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        processRequest(request, response);
         try {
             String sname = request.getParameter("name");
             String spass = request.getParameter("pass");
@@ -81,78 +80,20 @@ public class Register extends HttpServlet {
             AccDAO dao = new AccDAO();
             Account a = dao.checkemail(semail);
             if (a != null) {
-                String ms = "Email is existed";
+                String ms = "Email đã tồn tại!";
                 request.setAttribute("ms", ms);
                 request.getRequestDispatcher("register.jsp").forward(request, response);
             } else {
                 dao.insertNewUser(sname, spass, semail, sfullName);
+                String mss = "Đăng kí thàng công!";
+                request.setAttribute("mss", mss);
+                request.getRequestDispatcher("register.jsp").forward(request, response);
+
                 response.sendRedirect("login.jsp");
             }
         } catch (NumberFormatException e) {
             System.out.println(e);
         }
-
-//        String email = request.getParameter("email");
-//             String sname = request.getParameter("name");
-//        String spass = request.getParameter("pass");
-//        String semail = request.getParameter("email");
-//        String sfullName = request.getParameter("fullname");
-//            AccDAO loginDAO = new AccDAO();
-//            Account account = loginDAO.checkemail(email);
-////            DataAccount acc = loginDAO.getData(user, pass);
-//            if (account == null) {
-//                loginDAO.insertNewUser(sname, spass, semail, sfullName);
-//                response.sendRedirect("login.jsp");
-//            } else {
-//               String mess="Email đã có rồi!";
-//                request.setAttribute("mess", mess);
-//                request.getRequestDispatcher("register.jsp").forward(request, response);
-//            }
-//        String a = request.getParameter("name");
-//        String b = request.getParameter("pass");
-//        String c = request.getParameter("email");
-//        String d = request.getParameter("fullname");
-//
-//        AccDAO cc = new AccDAO();
-//        Account x = cc.checkAcountExist(c);
-//        if (x == null) {
-//
-//            cc.insertNewUser(a, b, c, d);
-//            request.setAttribute("mess_s", "Create account successfully !!");
-//            request.getRequestDispatcher("register.jsp").forward(request, response);
-//
-//        } else {
-//            request.setAttribute("mess", "Username has exist");
-//            request.getRequestDispatcher("register.jsp").forward(request, response);
-//
-//        }
-//       String name = req.getParameter("name");
-//        String pass = req.getParameter("pass");
-//        String email = req.getParameter("email");
-//        String address = req.getParameter("fullname");
-//        
-//        AccDAO dao = new AccDAO();
-//        if (dao.chekcAccount(email) 
-//                || !pass.matches("((?=.*\\d)(?=.*[a-zA-Z])[a-zA-Z\\d!@#$%^&*]{8,31})") ) {
-//            String mess = "";
-//            
-//            if (dao.chekcAccount(email)) {
-//                mess += "Email da ton tai";
-//                req.setAttribute("mess", mess);
-//            }
-//            
-//           
-//            req.getRequestDispatcher("register.jsp").forward(req, resp);
-//
-//        } else {
-//            dao.insertNewUser(name, pass, email, name);
-//            req.setAttribute("name", name);
-//            req.setAttribute("pass", pass);
-//            req.setAttribute("email", email);
-//            req.setAttribute("fullname", name);
-//           
-//            resp.sendRedirect("login.jsp");
-//        }
     }
 
     /**

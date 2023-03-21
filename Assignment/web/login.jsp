@@ -119,32 +119,16 @@
         <div >
             <form  action="login" method="post">
                 <div><h1 style="text-align: center">Welcome Back!</h1></div>
-                <p style="color: red">${mess}</p>
+                <h5 style="color: red ;margin: 6px; font-size: large;">${requestScope.mess}</h5>
                 <div class="form-group">
-                   
-                    <!--                    <input id="username" type="text" name="username" class="nhap" /> -->
                     <p> <input type="text" name="email" value="${accEmail}" class="nhap" placeholder="Email"></p>
-<!--                    <input type="email" placeholder="Enter email address(*)" value="${accEmail}" name="email"/>-->
-
-
-                    <!--                    <br/>-->
                 </div>
-                <div class="form-group">
-                   
-                    <!--                    <input type="password" name="password"  class="nhap"/>-->
+                <div class="form-group">        
                     <p> <input type="password" name="pass" value="${passWord}" class="nhap" placeholder="Password"></p>
-<!--                    <input type="password" placeholder="Enter password(*)" value="${passWord}" name="password">-->
-
-
-                    <!--                    <br/>-->
                 </div>
                 <div class="form-group">
-                    <div class="tich">
-                        <!--                        
-<!--                                                <input type="checkbox" name ="remember" value="remember"/> Remember me <br/>-->
+                    <div class="tich">                      
                         <p><input type="checkbox" name="checkbox" value="true"> Remember me</p>
-
-                        <!--                        <br>-->
                     </div>
                 </div>
 
@@ -160,7 +144,6 @@
                 </a>
                 <div class="small"><a style="text-decoration: none"  href="forgot-password.html">Forgot Password?</a></div>
                 <div class="small"><a style="text-decoration: none"  href="register.jsp">Create an Account!</a></div>
-            <h5 style="color: red ;margin: 6px; font-size: large;">${requestScope.mess}</h5>
 
             </form>
         </div>

@@ -112,7 +112,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     </head>
     <body>
 
-        <form action="register" method="post">
+        <form action="registerr" method="post">
             <div>
                 <h1>Create an Account!</h1>
             </div>
@@ -131,7 +131,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             <div>
                 <input type="text" class="fo ea" placeholder="FullName" name="fullname" required>
             </div>
-            
+            <h5 style="color: red ;margin: 6px; font-size: large;">${requestScope.ms}</h5>
+            <h5 style="color: red ;margin: 6px; font-size: large;">${requestScope.mss}</h5>
+
             <div class="edit" >
                 <button type="submit" class="btn c1"  style="width: 98%">Sign Up</button>
             </div>
@@ -148,8 +150,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 
             <div class="small"><a style="text-decoration: none"  href="forgot-password.html">Forgot Password?</a></div>
             <div class="small"><a style="text-decoration: none"  href="login.jsp">Already have an account? Login!</a></div>
-            <h5 style="color: red ;margin: 6px; font-size: large;">${requestScope.ms}</h5>
-
+            
         </form>
 
     </body>

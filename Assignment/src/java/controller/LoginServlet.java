@@ -130,7 +130,7 @@ public class LoginServlet extends HttpServlet {
             if (account == null) {
                 String mess="Tài khoản hoặc mật không đúng?";
                         request.setAttribute("mess", mess);
-                response.sendRedirect("login.jsp");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             } else {
                 Cookie u = new Cookie("userCooki", email);
                 Cookie p = new Cookie("passCooki", pass);
