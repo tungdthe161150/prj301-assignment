@@ -220,26 +220,7 @@
 
                         <li><a class="nav-link scrollto" href="#dd">Dinh Dưỡng</a></li>
                         <li><a class="nav-link scrollto" href="#td">Thực Đơn</a></li>
-                        <!--                        <li><a class="nav-link scrollto" href="#events">Events</a></li>
-                                                <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li>
-                                                <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
-                                                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                                                    <ul>
-                                                        <li><a href="#">Drop Down 1</a></li>
-                                                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                                            <ul>
-                                                                <li><a href="#">Deep Drop Down 1</a></li>
-                                                                <li><a href="#">Deep Drop Down 2</a></li>
-                                                                <li><a href="#">Deep Drop Down 3</a></li>
-                                                                <li><a href="#">Deep Drop Down 4</a></li>
-                                                                <li><a href="#">Deep Drop Down 5</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><a href="#">Drop Down 2</a></li>
-                                                        <li><a href="#">Drop Down 3</a></li>
-                                                        <li><a href="#">Drop Down 4</a></li>
-                                                    </ul>
-                                                </li>-->
+
                         <li><a class="nav-link scrollto" href="#contact">Khác</a></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
@@ -541,7 +522,7 @@
                                 <!--                    <a href="Add.jsp">Create student</a>   -->
 
                                 <!-- Trigger/Open The Modal -->
-                                <button id="myBtn">Thêm</button>
+                                <button id="myBtn" style="font-size: x-large;margin: 5px;background-color: rgba(255 205 57 );border-radius: 30px;"><ion-icon name="add-outline"></ion-icon></button>
 
                                 <!-- The Modal -->
                                 <div id="myModal" class="modal">
@@ -613,8 +594,8 @@
                                                 <td>
 
 
-                                                    <a href="update?spracid=${x.pracid}">update</a>
-                                                    <a href="#" onclick="showMess(${x.pracid})">delete</a>
+                                                    <a href="update?spracid=${x.pracid}" style="font-size: x-large;margin: 5px;"><ion-icon name="build-outline"></ion-icon></a>
+                                                    <a href="#" onclick="showMess(${x.pracid})" style="font-size: x-large;margin: 5px;"><ion-icon name="trash"></ion-icon></a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -677,7 +658,7 @@
                                 </div>
 
 
-                                <button id="myBtn1">Thêm</button>
+                                <button id="myBtn1" style="font-size: x-large;margin: 5px;background-color: rgba(255 205 57 );border-radius: 30px;"><ion-icon name="add-outline" ></ion-icon></button>
 
                                 <!-- The Modal -->
                                 <div id="myModal1" class="modal1">
@@ -781,8 +762,8 @@
                                                 <td class="nu">${x.carbohydrates}</td>
                                                 <td class="nu">${x.fat}</td>
                                                 <td>
-                                                    <a href="updateweek?sid=${x.id}" >update</a>
-                                                    <a href="deleteweek?sid=${x.id}" >delete</a>
+                                                    <a href="updateweek?sid=${x.id}" style="font-size: x-large;margin: 5px;"><ion-icon name="build-outline"></ion-icon></a>
+                                                    <a href="deleteweek?sid=${x.id}" style="font-size: x-large;margin: 5px;"><ion-icon name="trash"></ion-icon></a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -945,6 +926,7 @@
                         </script>
 
                         <script src="assets/js/toggleContent.js"></script>
+                        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
                         </body>
 

@@ -107,7 +107,8 @@ public class PracDAO extends DBContext {
     }
 
     public void updateStudent(String pracid, String pracName,
-            String pracTime, String pracTran, String pracDay, String accID) {
+            String pracTime, String pracTran, String pracDay, 
+            String accID) {
         String query = " update Practice\n"
                 + "  set pracName=?,\n"
                 + "  pracTime=?,\n"

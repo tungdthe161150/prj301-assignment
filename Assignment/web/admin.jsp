@@ -221,27 +221,7 @@
                         <li><a class="nav-link scrollto" href="#acc">Tài khoản</a></li>                       
                         <li><a class="nav-link scrollto" href="#tl">Tập Luyện</a></li>
                         <li><a class="nav-link scrollto" href="#td">Thực Đơn</a></li>
-                        <!--                        <li><a class="nav-link scrollto" href="#events">Events</a></li>
-                                                <li><a class="nav-link scrollto" href="#chefs">Chefs</a></li>
-                                                <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
-                                                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                                                    <ul>
-                                                        <li><a href="#">Drop Down 1</a></li>
-                                                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                                            <ul>
-                                                                <li><a href="#">Deep Drop Down 1</a></li>
-                                                                <li><a href="#">Deep Drop Down 2</a></li>
-                                                                <li><a href="#">Deep Drop Down 3</a></li>
-                                                                <li><a href="#">Deep Drop Down 4</a></li>
-                                                                <li><a href="#">Deep Drop Down 5</a></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li><a href="#">Drop Down 2</a></li>
-                                                        <li><a href="#">Drop Down 3</a></li>
-                                                        <li><a href="#">Drop Down 4</a></li>
-                                                    </ul>
-                                                </li>-->
-                        <!--                        <li><a class="nav-link scrollto" href="#contact">Khác</a></li>-->
+
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
@@ -269,6 +249,7 @@
                             <th class="nu" scope="col">Mật khẩu</th>
                             <th class="nu" scope="col">Email</th>
                             <th class="nu" scope="col">Tên đầy đủ</th>
+                            <th class="nu" scope="col">IsAdmin</th>
 
                         </tr>
                     </thead>
@@ -281,11 +262,12 @@
                                 <td class="nu">${x.passWord}</td>
                                 <td class="nu">${x.accEmail}</td>
                                 <td class="nu">${x.fullName}</td>
+                                <td class="nu">${x.isAdmin}</td>
                                 <td>
-
-
-                                    <a href="updateacc?saccID=${x.accID}">update</a>
-                                    <a href="#" onclick="showMess1(${x.accID}) ">delete</a>
+                                    <a href="updateacc?saccID=${x.accID}" style="font-size: x-large;margin: 5px;"><ion-icon name="build-outline"></ion-icon></a>
+                                    <a href="#" onclick="showMess1(${x.accID})" style="font-size: x-large;margin: 5px;"><ion-icon name="trash"></ion-icon></a>
+<!--                                    <a href="updateacc?saccID=${x.accID}">update</a>
+                                    <a href="#" onclick="showMess1(${x.accID})">delete</a>-->
                                 </td>
 
                             </tr>
@@ -332,10 +314,10 @@
                                 <td>${x.pracDay}</td>
                                 <td>${x.accID}</td>
                                 <td>
-
-
-                                    <a href="update?spracid=${x.pracid}">update</a>
-                                    <a href="#" onclick="showMess(${x.pracid})">delete</a>
+                                    <a href="update?spracid=${x.pracid}" style="font-size: x-large;margin: 5px;"><ion-icon name="build-outline"></ion-icon></a>
+                                    <a href="#" onclick="showMess(${x.pracid})" style="font-size: x-large;margin: 5px;"><ion-icon name="trash"></ion-icon></a>
+<!--                                    <a href="update?spracid=${x.pracid}">update</a>
+                                    <a href="#" onclick="showMess(${x.pracid})">delete</a>-->
                                 </td>
                             </tr>
                         </tbody>
@@ -357,7 +339,7 @@
                     <input type="text" name="search1" placeholder="ID Account " />
                     <input type="submit"  value="search" />
                 </form>
-                
+
                 <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
                     <thead>
                         <tr>
@@ -387,8 +369,10 @@
                                 <td class="nu">${x.accID}</td>
 
                                 <td>
-                                    <a href="updateweek?sid=${x.id}" >update</a>
-                                    <a href="deleteweek?sid=${x.id}" >delete</a>
+                                    <a href="updateweek?sid=${x.id}" style="font-size: x-large;margin: 5px;"><ion-icon name="build-outline"></ion-icon></a>
+                                    <a href="deleteweek?sid=${x.id}" style="font-size: x-large;margin: 5px;"><ion-icon name="trash"></ion-icon></a>
+<!--                                    <a href="updateweek?sid=${x.id}" >update</a>
+                                    <a href="deleteweek?sid=${x.id}" >delete</a>-->
                                 </td>
                             </tr>
                         </tbody>
@@ -430,12 +414,14 @@
                                         }
         </script>
         <script>
-                                        function showMess1(accID) {
-                                            var op = confirm('Bạn chắc chắn muốn xóa Account có accID = '+accID+' ?');
-                                            if (op === true) {
-                                                window.location.href = 'deleteacc?saccID=' + accID;
-                                            }
-                                        }
+            function showMess1(accID) {
+                var op = confirm('Bạn chắc chắn muốn xóa Account có accID = ' + accID + ' ?');
+                if (op === true) {
+                    window.location.href = 'deleteacc?saccID=' + accID;
+                }
+            }
         </script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<!--        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>-->
     </body>
 </html>

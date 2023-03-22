@@ -65,8 +65,8 @@ public class UpdateWeek extends HttpServlet {
         request.setAttribute("data", a.getUserName());
         String id = request.getParameter("sid");
         WeekDAO dao = new WeekDAO();
-        Week s = dao.getWeekByID(id);
-        request.setAttribute("stt", s);
+        Week ss = dao.getWeekByID(id);
+        request.setAttribute("stt", ss);
         request.getRequestDispatcher("Updateweek.jsp").forward(request, response);
     }
 
@@ -85,6 +85,7 @@ public class UpdateWeek extends HttpServlet {
         HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("account");
         request.setAttribute("data", a.getUserName());
+        String sid = request.getParameter("id");
         String sday_of_week = request.getParameter("day_of_week");
         String smeal_time = request.getParameter("meal_time");
         String smeal_name = request.getParameter("meal_name");
@@ -95,7 +96,7 @@ public class UpdateWeek extends HttpServlet {
         String saccID = request.getParameter("accID");
 
         WeekDAO dao = new WeekDAO();
-        dao.insertWeek(sday_of_week, smeal_time, smeal_name, scalories, sprotein, scarbohydrates, sfat, saccID);
+        dao.updateWeek(sid, sday_of_week, smeal_time, smeal_name, scalories, sprotein, scarbohydrates, sfat, saccID);
         response.sendRedirect("load");
     }
 
