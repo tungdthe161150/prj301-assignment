@@ -145,6 +145,7 @@ public class LoginServlet extends HttpServlet {
                     p.setMaxAge(0);
                 }
                 request.setAttribute("data", account.getUserName());
+                request.setAttribute("admin", account.getIsAdmin());
                 request.getRequestDispatcher("load").forward(request, response);
             }
         } catch (Exception e) {

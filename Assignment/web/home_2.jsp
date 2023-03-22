@@ -226,10 +226,10 @@
                     <i class="bi bi-list mobile-nav-toggle"></i>
                 </nav><!-- .navbar -->
                 <div class="scrollto  d-lg-flex">
-                    <c:if test="${sessionScope.account.getIsAdmin() == 1}">
+                    <c:if test="${admin == 1}">
                         <a href="load_admin" class="book-a-table-btn ">${requestScope.data}(Admin)</a>
                     </c:if>
-                    <c:if test="${sessionScope.account.getIsAdmin() == 0}">
+                    <c:if test="${admin == 0}">
                         <a href="#" class="book-a-table-btn ">${requestScope.data}</a>
                     </c:if>
                     <a href="loadnu" class="book-a-table-btn ">Đăng Xuất</a>
@@ -516,7 +516,7 @@
                             <div class="container" data-aos="fade-up">
 
                                 <div class="section-title">
-                                    <!--                        <h2>Menu</h2>-->
+                                                            <h2></h2>
                                     <p>Tập Luyện</p>
                                 </div>
                                 <!--                    <a href="Add.jsp">Create student</a>   -->
@@ -611,7 +611,7 @@
                             <div class="container" data-aos="fade-up">
 
                                 <div class="section-title">
-                                    <!--                        <h2>Menu</h2>-->
+                                                            <h2></h2>
                                     <p>Dinh Dưỡng</p>
                                 </div>
 
@@ -653,7 +653,7 @@
                             <div class="container" data-aos="fade-up">
 
                                 <div class="section-title">
-                                    <!--                        <h2>Menu</h2>-->
+                                    <h2></h2>
                                     <p>Thực đơn</p>
                                 </div>
 
@@ -777,8 +777,8 @@
                             <div class="container" data-aos="fade-up">
 
                                 <div class="section-title">
-                                    <h2>Contact</h2>
-                                    <p>Contact Us</p>
+                                    <h2></h2>
+                                    <p>Khác</p>
                                 </div>
                             </div>
 

@@ -80,7 +80,7 @@
 
                 <div class="section-title">
                     <h2>Update</h2>
-                    <p>Tập Luyện</p>
+                    <p>Account</p>
                 </div>
                 <form action="updateacc" method="post" class="update11">
                     <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
