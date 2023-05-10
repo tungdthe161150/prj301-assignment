@@ -85,7 +85,7 @@ public class AddWeek extends HttpServlet {
         String saccID = Integer.toString(a.getAccID());
         WeekDAO dao = new WeekDAO();
         dao.insertWeek(sday_of_week, smeal_time, smeal_name, scalories, sprotein, scarbohydrates, sfat, saccID);
-        response.sendRedirect("load");
+        response.sendRedirect("thucdon");
     }
 
     /**

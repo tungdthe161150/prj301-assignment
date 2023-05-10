@@ -49,7 +49,7 @@ public class Search extends HttpServlet {
         String search = request.getParameter("search")==null?"":request.getParameter("search");
         List<Nutrition> sl =dao.searchStudent(search);
         request.setAttribute("listnu", sl);
-        request.getRequestDispatcher("home_2.jsp").forward(request, response);
+        request.getRequestDispatcher("dinhduong.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

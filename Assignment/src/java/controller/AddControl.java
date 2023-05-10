@@ -83,7 +83,7 @@ public class AddControl extends HttpServlet {
         String saccID = Integer.toString(a.getAccID());
         PracDAO dao = new PracDAO();
         dao.insertStudent(sname, sgender, sdob, spracDay, saccID);
-        response.sendRedirect("load");
+        response.sendRedirect("tapluyen");
     }
 
     /**

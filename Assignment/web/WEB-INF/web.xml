@@ -73,6 +73,18 @@
         <servlet-name>UpdateAcc</servlet-name>
         <servlet-class>controller.UpdateAcc</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>tapluyen</servlet-name>
+        <servlet-class>controller.tapluyen</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>thucdon</servlet-name>
+        <servlet-class>controller.thucdon</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>dinhduong</servlet-name>
+        <servlet-class>controller.dinhduong</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCookie</servlet-name>
         <url-pattern>/AddCookie</url-pattern>
@@ -167,6 +179,18 @@
     <servlet-mapping>
         <servlet-name>UpdateAcc</servlet-name>
         <url-pattern>/updateacc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>tapluyen</servlet-name>
+        <url-pattern>/tapluyen</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>thucdon</servlet-name>
+        <url-pattern>/thucdon</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dinhduong</servlet-name>
+        <url-pattern>/dinhduong</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

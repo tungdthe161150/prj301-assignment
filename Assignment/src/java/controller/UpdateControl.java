@@ -95,7 +95,7 @@ public class UpdateControl extends HttpServlet {
         PracDAO dao = new PracDAO();
         dao.updateStudent(spracid, spracName, spracTime, spracTran, spracDay, saccID);
 
-        response.sendRedirect("load");
+        response.sendRedirect("tapluyen");
 
     }
 

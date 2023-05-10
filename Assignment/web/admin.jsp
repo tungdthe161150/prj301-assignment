@@ -238,7 +238,7 @@
 
                 <div class="section-title">
                     <!--                        <h2>Menu</h2>-->
-                    <p>Thực đơn</p>
+                    <p>Account</p>
                 </div>
 
                 <table class="table table-hover table-dark" style="border: 1px #ffffff solid ;height: 100px">
